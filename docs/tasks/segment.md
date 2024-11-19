@@ -1,16 +1,21 @@
 ---
 comments: true
-description: Learn how to use instance segmentation models with Ultralytics YOLO. Instructions on training, validation, image prediction, and model export.
-keywords: yolov8, instance segmentation, Ultralytics, COCO dataset, image segmentation, object detection, model training, model validation, image prediction, model export
+description: Learn how to use instance segmentation models with Ultralytics YOLO. Instructions on training, validation,
+image prediction, and model export.
+keywords: yolov8, instance segmentation, Ultralytics, COCO dataset, image segmentation, object detection, model
+training, model validation, image prediction, model export
 ---
 
 # Instance Segmentation
 
 <img width="1024" src="https://user-images.githubusercontent.com/26833433/243418644-7df320b8-098d-47f1-85c5-26604d761286.png">
 
-Instance segmentation goes a step further than object detection and involves identifying individual objects in an image and segmenting them from the rest of the image.
+Instance segmentation goes a step further than object detection and involves identifying individual objects in an image
+and segmenting them from the rest of the image.
 
-The output of an instance segmentation model is a set of masks or contours that outline each object in the image, along with class labels and confidence scores for each object. Instance segmentation is useful when you need to know not only where objects are in an image, but also what their exact shape is.
+The output of an instance segmentation model is a set of masks or contours that outline each object in the image, along
+with class labels and confidence scores for each object. Instance segmentation is useful when you need to know not only
+where objects are in an image, but also what their exact shape is.
 
 <p align="center">
   <br>
@@ -29,9 +34,13 @@ The output of an instance segmentation model is a set of masks or contours that 
 
 ## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/v8)
 
-YOLOv8 pretrained Segment models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.
+YOLOv8 pretrained Segment models are shown here. Detect, Segment and Pose models are pretrained on
+the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while
+Classify models are pretrained on
+the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.
 
-[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.
+[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the
+latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.
 
 | Model                                                                                        | size<br><sup>(pixels) | mAP<sup>box<br>50-95 | mAP<sup>mask<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
 |----------------------------------------------------------------------------------------------|-----------------------|----------------------|-----------------------|--------------------------------|-------------------------------------|--------------------|-------------------|
@@ -49,7 +58,8 @@ YOLOv8 pretrained Segment models are shown here. Detect, Segment and Pose models
 
 ## Train
 
-Train YOLOv8n-seg on the COCO128-seg dataset for 100 epochs at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
+Train YOLOv8n-seg on the COCO128-seg dataset for 100 epochs at image size 640. For a full list of available arguments
+see the [Configuration](../usage/cfg.md) page.
 
 !!! example ""
 
@@ -81,7 +91,9 @@ Train YOLOv8n-seg on the COCO128-seg dataset for 100 epochs at image size 640. F
 
 ### Dataset format
 
-YOLO segmentation dataset format can be found in detail in the [Dataset Guide](../datasets/segment/index.md). To convert your existing dataset from other formats (like COCO etc.) to YOLO format, please use [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) tool by Ultralytics.
+YOLO segmentation dataset format can be found in detail in the [Dataset Guide](../datasets/segment/index.md). To convert
+your existing dataset from other formats (like COCO etc.) to YOLO format, please
+use [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) tool by Ultralytics.
 
 ## Val
 
@@ -169,7 +181,8 @@ Export a YOLOv8n-seg model to a different format like ONNX, CoreML, etc.
         yolo export model=path/to/best.pt format=onnx  # export custom trained model
         ```
 
-Available YOLOv8-seg export formats are in the table below. You can predict or validate directly on exported models, i.e. `yolo predict model=yolov8n-seg.onnx`. Usage examples are shown for your model after export completes.
+Available YOLOv8-seg export formats are in the table below. You can predict or validate directly on exported models,
+i.e. `yolo predict model=yolov8n-seg.onnx`. Usage examples are shown for your model after export completes.
 
 | Format                                                             | `format` Argument | Model                         | Metadata | Arguments                                           |
 |--------------------------------------------------------------------|-------------------|-------------------------------|----------|-----------------------------------------------------|

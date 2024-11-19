@@ -1,12 +1,14 @@
 ---
 comments: true
-description: Access object detection capabilities of YOLOv8 via our RESTful API. Learn how to use the YOLO Inference API with Python or CLI for swift object detection.
+description: Access object detection capabilities of YOLOv8 via our RESTful API. Learn how to use the YOLO Inference API
+with Python or CLI for swift object detection.
 keywords: Ultralytics, YOLOv8, Inference API, object detection, RESTful API, Python, CLI, Quickstart
 ---
 
 # YOLO Inference API
 
-The YOLO Inference API allows you to access the YOLOv8 object detection capabilities via a RESTful API. This enables you to run object detection on images without the need to install and set up the YOLOv8 environment locally.
+The YOLO Inference API allows you to access the YOLOv8 object detection capabilities via a RESTful API. This enables you
+to run object detection on images without the need to install and set up the YOLOv8 environment locally.
 
 ![Inference API Screenshot](https://github.com/ultralytics/ultralytics/assets/26833433/c0109ec0-7bb0-46e1-b0d2-bae687960a01)
 Screenshot of the Inference API section in the trained model Preview tab.
@@ -43,11 +45,14 @@ with open("path/to/image.jpg", "rb") as image_file:
 print(response.json())
 ```
 
-In this example, replace `API_KEY` with your actual API key, `MODEL_ID` with the desired model ID, and `path/to/image.jpg` with the path to the image you want to analyze.
+In this example, replace `API_KEY` with your actual API key, `MODEL_ID` with the desired model ID,
+and `path/to/image.jpg` with the path to the image you want to analyze.
 
 ## Example Usage with CLI
 
-You can use the YOLO Inference API with the command-line interface (CLI) by utilizing the `curl` command. Replace `API_KEY` with your actual API key, `MODEL_ID` with the desired model ID, and `image.jpg` with the path to the image you want to analyze:
+You can use the YOLO Inference API with the command-line interface (CLI) by utilizing the `curl` command.
+Replace `API_KEY` with your actual API key, `MODEL_ID` with the desired model ID, and `image.jpg` with the path to the
+image you want to analyze:
 
 ```bash
 curl -X POST "https://api.ultralytics.com/v1/predict/MODEL_ID" \
@@ -60,9 +65,11 @@ curl -X POST "https://api.ultralytics.com/v1/predict/MODEL_ID" \
 
 ## Passing Arguments
 
-This command sends a POST request to the YOLO Inference API with the specified `MODEL_ID` in the URL and the `API_KEY` in the request `headers`, along with the image file specified by `@path/to/image.jpg`.
+This command sends a POST request to the YOLO Inference API with the specified `MODEL_ID` in the URL and the `API_KEY`
+in the request `headers`, along with the image file specified by `@path/to/image.jpg`.
 
-Here's an example of passing the `size`, `confidence`, and `iou` arguments via the API URL using the `requests` library in Python:
+Here's an example of passing the `size`, `confidence`, and `iou` arguments via the API URL using the `requests` library
+in Python:
 
 ```python
 import requests
@@ -84,9 +91,11 @@ with open("path/to/image.jpg", "rb") as image_file:
 print(response.json())
 ```
 
-In this example, the `data` dictionary contains the query arguments `size`, `confidence`, and `iou`, which tells the API to run inference at image size 640 with confidence and IoU thresholds of 0.25 and 0.45.
+In this example, the `data` dictionary contains the query arguments `size`, `confidence`, and `iou`, which tells the API
+to run inference at image size 640 with confidence and IoU thresholds of 0.25 and 0.45.
 
-This will send the query parameters along with the file in the POST request. See the table below for a full list of available inference arguments.
+This will send the query parameters along with the file in the POST request. See the table below for a full list of
+available inference arguments.
 
 | Inference Argument | Default | Type    | Notes                                          |
 |--------------------|---------|---------|------------------------------------------------|
@@ -98,13 +107,15 @@ This will send the query parameters along with the file in the POST request. See
 
 ## Return JSON format
 
-The YOLO Inference API returns a JSON list with the detection results. The format of the JSON list will be the same as the one produced locally by the `results[0].tojson()` command.
+The YOLO Inference API returns a JSON list with the detection results. The format of the JSON list will be the same as
+the one produced locally by the `results[0].tojson()` command.
 
 The JSON list contains information about the detected objects, their coordinates, classes, and confidence scores.
 
 ### Detect Model Format
 
-YOLO detection models, such as `yolov8n.pt`, can return JSON responses from local inference, CLI API inference, and Python API inference. All of these methods produce the same JSON response format.
+YOLO detection models, such as `yolov8n.pt`, can return JSON responses from local inference, CLI API inference, and
+Python API inference. All of these methods produce the same JSON response format.
 
 !!! example "Detect Model JSON Response"
 
@@ -198,7 +209,8 @@ YOLO detection models, such as `yolov8n.pt`, can return JSON responses from loca
 
 ### Segment Model Format
 
-YOLO segmentation models, such as `yolov8n-seg.pt`, can return JSON responses from local inference, CLI API inference, and Python API inference. All of these methods produce the same JSON response format.
+YOLO segmentation models, such as `yolov8n-seg.pt`, can return JSON responses from local inference, CLI API inference,
+and Python API inference. All of these methods produce the same JSON response format.
 
 !!! example "Segment Model JSON Response"
 
@@ -335,7 +347,8 @@ YOLO segmentation models, such as `yolov8n-seg.pt`, can return JSON responses fr
 
 ### Pose Model Format
 
-YOLO pose models, such as `yolov8n-pose.pt`, can return JSON responses from local inference, CLI API inference, and Python API inference. All of these methods produce the same JSON response format.
+YOLO pose models, such as `yolov8n-pose.pt`, can return JSON responses from local inference, CLI API inference, and
+Python API inference. All of these methods produce the same JSON response format.
 
 !!! example "Pose Model JSON Response"
 

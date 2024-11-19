@@ -1,12 +1,16 @@
 ---
 comments: true
-description: Detailed guide on deploying trained models on NVIDIA Jetson using TensorRT and DeepStream SDK. Optimize the inference performance on Jetson with Ultralytics.
-keywords: TensorRT, NVIDIA Jetson, DeepStream SDK, deployment, Ultralytics, YOLO, Machine Learning, AI, Deep Learning, model optimization, inference performance
+description: Detailed guide on deploying trained models on NVIDIA Jetson using TensorRT and DeepStream SDK. Optimize the
+inference performance on Jetson with Ultralytics.
+keywords: TensorRT, NVIDIA Jetson, DeepStream SDK, deployment, Ultralytics, YOLO, Machine Learning, AI, Deep Learning,
+model optimization, inference performance
 ---
 
 # Deploy on NVIDIA Jetson using TensorRT and DeepStream SDK
 
-📚 This guide explains how to deploy a trained model into NVIDIA Jetson Platform and perform inference using TensorRT and DeepStream SDK. Here we use TensorRT to maximize the inference performance on the Jetson platform. UPDATED 18 November 2022.
+📚 This guide explains how to deploy a trained model into NVIDIA Jetson Platform and perform inference using TensorRT and
+DeepStream SDK. Here we use TensorRT to maximize the inference performance on the Jetson platform. UPDATED 18 November
+2022.
 
 ## Hardware Verification
 
@@ -17,16 +21,21 @@ We have tested and verified this guide on the following Jetson devices
 
 ## Before You Start
 
-Make sure you have properly installed **JetPack SDK** with all the **SDK Components** and **DeepStream SDK** on the Jetson device as this includes CUDA, TensorRT and DeepStream SDK which are needed for this guide.
+Make sure you have properly installed **JetPack SDK** with all the **SDK Components** and **DeepStream SDK** on the
+Jetson device as this includes CUDA, TensorRT and DeepStream SDK which are needed for this guide.
 
-JetPack SDK provides a full development environment for hardware-accelerated AI-at-the-edge development. All Jetson modules and developer kits are supported by JetPack SDK.
+JetPack SDK provides a full development environment for hardware-accelerated AI-at-the-edge development. All Jetson
+modules and developer kits are supported by JetPack SDK.
 
 There are two major installation methods including,
 
 1. SD Card Image Method
 2. NVIDIA SDK Manager Method
 
-You can find a very detailed installation guide from NVIDIA [official website](https://developer.nvidia.com/jetpack-sdk-461). You can also find guides corresponding to the above-mentioned [reComputer J1010](https://wiki.seeedstudio.com/reComputer_J1010_J101_Flash_Jetpack) and [reComputer J2021](https://wiki.seeedstudio.com/reComputer_J2021_J202_Flash_Jetpack).
+You can find a very detailed installation guide from
+NVIDIA [official website](https://developer.nvidia.com/jetpack-sdk-461). You can also find guides corresponding to the
+above-mentioned [reComputer J1010](https://wiki.seeedstudio.com/reComputer_J1010_J101_Flash_Jetpack)
+and [reComputer J2021](https://wiki.seeedstudio.com/reComputer_J2021_J202_Flash_Jetpack).
 
 ## Install Necessary Packages
 
@@ -51,7 +60,8 @@ cd yolov5
 vi requirements.txt
 ```
 
-- **Step 5.** Edit the following lines. Here you need to press **i** first to enter editing mode. Press **ESC**, then type **:wq** to save and quit
+- **Step 5.** Edit the following lines. Here you need to press **i** first to enter editing mode. Press **ESC**, then
+  type **:wq** to save and quit
 
 ```sh
 # torch>=1.8.0
@@ -74,25 +84,31 @@ pip3 install -r requirements.txt
 
 ## Install PyTorch and Torchvision
 
-We cannot install PyTorch and Torchvision from pip because they are not compatible to run on Jetson platform which is based on **ARM aarch64 architecture**. Therefore, we need to manually install pre-built PyTorch pip wheel and compile/ install Torchvision from source.
+We cannot install PyTorch and Torchvision from pip because they are not compatible to run on Jetson platform which is
+based on **ARM aarch64 architecture**. Therefore, we need to manually install pre-built PyTorch pip wheel and compile/
+install Torchvision from source.
 
-Visit [this page](https://forums.developer.nvidia.com/t/pytorch-for-jetson) to access all the PyTorch and Torchvision links.
+Visit [this page](https://forums.developer.nvidia.com/t/pytorch-for-jetson) to access all the PyTorch and Torchvision
+links.
 
 Here are some of the versions supported by JetPack 4.6 and above.
 
 **PyTorch v1.10.0**
 
-Supported by JetPack 4.4 (L4T R32.4.3) / JetPack 4.4.1 (L4T R32.4.4) / JetPack 4.5 (L4T R32.5.0) / JetPack 4.5.1 (L4T R32.5.1) / JetPack 4.6 (L4T R32.6.1) with Python 3.6
+Supported by JetPack 4.4 (L4T R32.4.3) / JetPack 4.4.1 (L4T R32.4.4) / JetPack 4.5 (L4T R32.5.0) / JetPack 4.5.1 (L4T
+R32.5.1) / JetPack 4.6 (L4T R32.6.1) with Python 3.6
 
 **file_name:** torch-1.10.0-cp36-cp36m-linux_aarch64.whl
-**URL:** [https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl](https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl)
+**URL:
+** [https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl](https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl)
 
 **PyTorch v1.12.0**
 
 Supported by JetPack 5.0 (L4T R34.1.0) / JetPack 5.0.1 (L4T R34.1.1) / JetPack 5.0.2 (L4T R35.1.0) with Python 3.8
 
 **file_name:** torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
-**URL:** [https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl](https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl)
+**URL:
+** [https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl](https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl)
 
 - **Step 1.** Install torch according to your JetPack version in the following format
 
@@ -110,7 +126,8 @@ wget https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl -
 pip3 install torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 ```
 
-- **Step 2.** Install torchvision depending on the version of PyTorch that you have installed. For example, we chose **PyTorch v1.10.0**, which means, we need to choose **Torchvision v0.11.1**
+- **Step 2.** Install torchvision depending on the version of PyTorch that you have installed. For example, we chose *
+  *PyTorch v1.10.0**, which means, we need to choose **Torchvision v0.11.1**
 
 ```sh
 sudo apt install -y libjpeg-dev zlib1g-dev
@@ -201,7 +218,8 @@ model-file=yolov5s.wts
 config-file=config_infer_primary_yoloV5.txt
 ```
 
-- **Step 9.** Change the video source in **deepstream_app_config** file. Here a default video file is loaded as you can see below
+- **Step 9.** Change the video source in **deepstream_app_config** file. Here a default video file is loaded as you can
+  see below
 
 ```sh
 ...
@@ -218,7 +236,8 @@ deepstream-app -c deepstream_app_config.txt
 
 <div align=center><img width=1000 src="https://files.seeedstudio.com/wiki/YOLOV5/FP32-yolov5s.gif"/></div>
 
-The above result is running on **Jetson Xavier NX** with **FP32** and **YOLOv5s 640x640**. We can see that the **FPS** is around **30**.
+The above result is running on **Jetson Xavier NX** with **FP32** and **YOLOv5s 640x640**. We can see that the **FPS**
+is around **30**.
 
 ## INT8 Calibration
 
@@ -238,7 +257,9 @@ CUDA_VER=11.4 OPENCV=1 make -C nvdsinfer_custom_impl_Yolo  # for DeepStream 6.1
 CUDA_VER=10.2 OPENCV=1 make -C nvdsinfer_custom_impl_Yolo  # for DeepStream 6.0.1 / 6.0
 ```
 
-- **Step 3.** For COCO dataset, download the [val2017](https://drive.google.com/file/d/1gbvfn7mcsGDRZ_luJwtITL-ru2kK99aK/view?usp=sharing), extract, and move to **DeepStream-Yolo** folder
+- **Step 3.** For COCO dataset, download
+  the [val2017](https://drive.google.com/file/d/1gbvfn7mcsGDRZ_luJwtITL-ru2kK99aK/view?usp=sharing), extract, and move
+  to **DeepStream-Yolo** folder
 
 - **Step 4.** Make a new directory for calibration images
 
@@ -254,7 +275,10 @@ for jpg in $(ls -1 val2017/*.jpg | sort -R | head -1000); do \
 done
 ```
 
-**Note:** NVIDIA recommends at least 500 images to get a good accuracy. On this example, 1000 images are chosen to get better accuracy (more images = more accuracy). Higher INT8_CALIB_BATCH_SIZE values will result in more accuracy and faster calibration speed. Set it according to you GPU memory. You can set it from **head -1000**. For example, for 2000 images, **head -2000**. This process can take a long time.
+**Note:** NVIDIA recommends at least 500 images to get a good accuracy. On this example, 1000 images are chosen to get
+better accuracy (more images = more accuracy). Higher INT8_CALIB_BATCH_SIZE values will result in more accuracy and
+faster calibration speed. Set it according to you GPU memory. You can set it from **head -1000**. For example, for 2000
+images, **head -2000**. This process can take a long time.
 
 - **Step 6.** Create the **calibration.txt** file with all selected images
 
@@ -301,7 +325,8 @@ deepstream-app -c deepstream_app_config.txt
 
 <div align=center><img width=1000  src="https://files.seeedstudio.com/wiki/YOLOV5/INT8-yolov5s.gif"/></div>
 
-The above result is running on **Jetson Xavier NX** with **INT8** and **YOLOv5s 640x640**. We can see that the **FPS** is around **60**.
+The above result is running on **Jetson Xavier NX** with **INT8** and **YOLOv5s 640x640**. We can see that the **FPS**
+is around **60**.
 
 ## Benchmark results
 

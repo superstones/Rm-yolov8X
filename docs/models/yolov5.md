@@ -1,24 +1,39 @@
 ---
 comments: true
-description: Discover YOLOv5u, a boosted version of the YOLOv5 model featuring an improved accuracy-speed tradeoff and numerous pre-trained models for various object detection tasks.
-keywords: YOLOv5u, object detection, pre-trained models, Ultralytics, Inference, Validation, YOLOv5, YOLOv8, anchor-free, objectness-free, real-time applications, machine learning
+description: Discover YOLOv5u, a boosted version of the YOLOv5 model featuring an improved accuracy-speed tradeoff and
+numerous pre-trained models for various object detection tasks.
+keywords: YOLOv5u, object detection, pre-trained models, Ultralytics, Inference, Validation, YOLOv5, YOLOv8,
+anchor-free, objectness-free, real-time applications, machine learning
 ---
 
 # YOLOv5
 
 ## Overview
 
-YOLOv5u represents an advancement in object detection methodologies. Originating from the foundational architecture of the [YOLOv5](https://github.com/ultralytics/yolov5) model developed by Ultralytics, YOLOv5u integrates the anchor-free, objectness-free split head, a feature previously introduced in the [YOLOv8](./yolov8.md) models. This adaptation refines the model's architecture, leading to an improved accuracy-speed tradeoff in object detection tasks. Given the empirical results and its derived features, YOLOv5u provides an efficient alternative for those seeking robust solutions in both research and practical applications.
+YOLOv5u represents an advancement in object detection methodologies. Originating from the foundational architecture of
+the [YOLOv5](https://github.com/ultralytics/yolov5) model developed by Ultralytics, YOLOv5u integrates the anchor-free,
+objectness-free split head, a feature previously introduced in the [YOLOv8](./yolov8.md) models. This adaptation refines
+the model's architecture, leading to an improved accuracy-speed tradeoff in object detection tasks. Given the empirical
+results and its derived features, YOLOv5u provides an efficient alternative for those seeking robust solutions in both
+research and practical applications.
 
 ![Ultralytics YOLOv5](https://raw.githubusercontent.com/ultralytics/assets/main/yolov5/v70/splash.png)
 
 ## Key Features
 
-- **Anchor-free Split Ultralytics Head:** Traditional object detection models rely on predefined anchor boxes to predict object locations. However, YOLOv5u modernizes this approach. By adopting an anchor-free split Ultralytics head, it ensures a more flexible and adaptive detection mechanism, consequently enhancing the performance in diverse scenarios.
+- **Anchor-free Split Ultralytics Head:** Traditional object detection models rely on predefined anchor boxes to predict
+  object locations. However, YOLOv5u modernizes this approach. By adopting an anchor-free split Ultralytics head, it
+  ensures a more flexible and adaptive detection mechanism, consequently enhancing the performance in diverse scenarios.
 
-- **Optimized Accuracy-Speed Tradeoff:** Speed and accuracy often pull in opposite directions. But YOLOv5u challenges this tradeoff. It offers a calibrated balance, ensuring real-time detections without compromising on accuracy. This feature is particularly invaluable for applications that demand swift responses, such as autonomous vehicles, robotics, and real-time video analytics.
+- **Optimized Accuracy-Speed Tradeoff:** Speed and accuracy often pull in opposite directions. But YOLOv5u challenges
+  this tradeoff. It offers a calibrated balance, ensuring real-time detections without compromising on accuracy. This
+  feature is particularly invaluable for applications that demand swift responses, such as autonomous vehicles,
+  robotics, and real-time video analytics.
 
-- **Variety of Pre-trained Models:** Understanding that different tasks require different toolsets, YOLOv5u provides a plethora of pre-trained models. Whether you're focusing on Inference, Validation, or Training, there's a tailor-made model awaiting you. This variety ensures you're not just using a one-size-fits-all solution, but a model specifically fine-tuned for your unique challenge.
+- **Variety of Pre-trained Models:** Understanding that different tasks require different toolsets, YOLOv5u provides a
+  plethora of pre-trained models. Whether you're focusing on Inference, Validation, or Training, there's a tailor-made
+  model awaiting you. This variety ensures you're not just using a one-size-fits-all solution, but a model specifically
+  fine-tuned for your unique challenge.
 
 ## Supported Tasks
 
@@ -54,7 +69,8 @@ YOLOv5u represents an advancement in object detection methodologies. Originating
 
 ## Usage
 
-You can use YOLOv5u for object detection tasks using the Ultralytics repository. The following is a sample code snippet showing how to use YOLOv5u model for inference:
+You can use YOLOv5u for object detection tasks using the Ultralytics repository. The following is a sample code snippet
+showing how to use YOLOv5u model for inference:
 
 !!! example ""
 
@@ -112,4 +128,5 @@ If you use YOLOv5 or YOLOv5u in your research, please cite the Ultralytics YOLOv
         }
         ```
 
-Special thanks to Glenn Jocher and the Ultralytics team for their work on developing and maintaining the YOLOv5 and YOLOv5u models.
+Special thanks to Glenn Jocher and the Ultralytics team for their work on developing and maintaining the YOLOv5 and
+YOLOv5u models.

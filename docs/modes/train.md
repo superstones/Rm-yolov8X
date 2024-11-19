@@ -1,7 +1,9 @@
 ---
 comments: true
-description: Step-by-step guide to train YOLOv8 models with Ultralytics YOLO including examples of single-GPU and multi-GPU training
-keywords: Ultralytics, YOLOv8, YOLO, object detection, train mode, custom dataset, GPU training, multi-GPU, hyperparameters, CLI examples, Python examples
+description: Step-by-step guide to train YOLOv8 models with Ultralytics YOLO including examples of single-GPU and
+multi-GPU training
+keywords: Ultralytics, YOLOv8, YOLO, object detection, train mode, custom dataset, GPU training, multi-GPU,
+hyperparameters, CLI examples, Python examples
 ---
 
 # Model Training with Ultralytics YOLO
@@ -10,7 +12,10 @@ keywords: Ultralytics, YOLOv8, YOLO, object detection, train mode, custom datase
 
 ## Introduction
 
-Training a deep learning model involves feeding it data and adjusting its parameters so that it can make accurate predictions. Train mode in Ultralytics YOLOv8 is engineered for effective and efficient training of object detection models, fully utilizing modern hardware capabilities. This guide aims to cover all the details you need to get started with training your own models using YOLOv8's robust set of features.
+Training a deep learning model involves feeding it data and adjusting its parameters so that it can make accurate
+predictions. Train mode in Ultralytics YOLOv8 is engineered for effective and efficient training of object detection
+models, fully utilizing modern hardware capabilities. This guide aims to cover all the details you need to get started
+with training your own models using YOLOv8's robust set of features.
 
 <p align="center">
   <br>
@@ -27,7 +32,8 @@ Training a deep learning model involves feeding it data and adjusting its parame
 
 Here are some compelling reasons to opt for YOLOv8's Train mode:
 
-- **Efficiency:** Make the most out of your hardware, whether you're on a single-GPU setup or scaling across multiple GPUs.
+- **Efficiency:** Make the most out of your hardware, whether you're on a single-GPU setup or scaling across multiple
+  GPUs.
 - **Versatility:** Train on custom datasets in addition to readily available ones like COCO, VOC, and ImageNet.
 - **User-Friendly:** Simple yet powerful CLI and Python interfaces for a straightforward training experience.
 - **Hyperparameter Flexibility:** A broad range of customizable hyperparameters to fine-tune model performance.
@@ -36,10 +42,13 @@ Here are some compelling reasons to opt for YOLOv8's Train mode:
 
 The following are some notable features of YOLOv8's Train mode:
 
-- **Automatic Dataset Download:** Standard datasets like COCO, VOC, and ImageNet are downloaded automatically on first use.
+- **Automatic Dataset Download:** Standard datasets like COCO, VOC, and ImageNet are downloaded automatically on first
+  use.
 - **Multi-GPU Support:** Scale your training efforts seamlessly across multiple GPUs to expedite the process.
-- **Hyperparameter Configuration:** The option to modify hyperparameters through YAML configuration files or CLI arguments.
-- **Visualization and Monitoring:** Real-time tracking of training metrics and visualization of the learning process for better insights.
+- **Hyperparameter Configuration:** The option to modify hyperparameters through YAML configuration files or CLI
+  arguments.
+- **Visualization and Monitoring:** Real-time tracking of training metrics and visualization of the learning process for
+  better insights.
 
 !!! tip "Tip"
 
@@ -47,7 +56,8 @@ The following are some notable features of YOLOv8's Train mode:
 
 ## Usage Examples
 
-Train YOLOv8n on the COCO128 dataset for 100 epochs at image size 640. See Arguments section below for a full list of training arguments.
+Train YOLOv8n on the COCO128 dataset for 100 epochs at image size 640. See Arguments section below for a full list of
+training arguments.
 
 !!! example "Single-GPU and CPU Training Example"
 
@@ -82,7 +92,8 @@ Train YOLOv8n on the COCO128 dataset for 100 epochs at image size 640. See Argum
 
 ### Multi-GPU Training
 
-The training device can be specified using the `device` argument. If no argument is passed GPU `device=0` will be used if available, otherwise `device=cpu` will be used.
+The training device can be specified using the `device` argument. If no argument is passed GPU `device=0` will be used
+if available, otherwise `device=cpu` will be used.
 
 !!! example "Multi-GPU Training Example"
 
@@ -107,9 +118,12 @@ The training device can be specified using the `device` argument. If no argument
 
 ### Apple M1 and M2 MPS Training
 
-With the support for Apple M1 and M2 chips integrated in the Ultralytics YOLO models, it's now possible to train your models on devices utilizing the powerful Metal Performance Shaders (MPS) framework. The MPS offers a high-performance way of executing computation and image processing tasks on Apple's custom silicon.
+With the support for Apple M1 and M2 chips integrated in the Ultralytics YOLO models, it's now possible to train your
+models on devices utilizing the powerful Metal Performance Shaders (MPS) framework. The MPS offers a high-performance
+way of executing computation and image processing tasks on Apple's custom silicon.
 
-To enable training on Apple M1 and M2 chips, you should specify 'mps' as your device when initiating the training process. Below is an example of how you could do this in Python and via the command line:
+To enable training on Apple M1 and M2 chips, you should specify 'mps' as your device when initiating the training
+process. Below is an example of how you could do this in Python and via the command line:
 
 !!! example "MPS Training Example"
 
@@ -132,15 +146,22 @@ To enable training on Apple M1 and M2 chips, you should specify 'mps' as your de
         yolo detect train data=coco128.yaml model=yolov8n.pt epochs=100 imgsz=640 device=mps
         ```
 
-While leveraging the computational power of the M1/M2 chips, this enables more efficient processing of the training tasks. For more detailed guidance and advanced configuration options, please refer to the [PyTorch MPS documentation](https://pytorch.org/docs/stable/notes/mps.html).
+While leveraging the computational power of the M1/M2 chips, this enables more efficient processing of the training
+tasks. For more detailed guidance and advanced configuration options, please refer to
+the [PyTorch MPS documentation](https://pytorch.org/docs/stable/notes/mps.html).
 
 ### Resuming Interrupted Trainings
 
-Resuming training from a previously saved state is a crucial feature when working with deep learning models. This can come in handy in various scenarios, like when the training process has been unexpectedly interrupted, or when you wish to continue training a model with new data or for more epochs.
+Resuming training from a previously saved state is a crucial feature when working with deep learning models. This can
+come in handy in various scenarios, like when the training process has been unexpectedly interrupted, or when you wish
+to continue training a model with new data or for more epochs.
 
-When training is resumed, Ultralytics YOLO loads the weights from the last saved model and also restores the optimizer state, learning rate scheduler, and the epoch number. This allows you to continue the training process seamlessly from where it was left off.
+When training is resumed, Ultralytics YOLO loads the weights from the last saved model and also restores the optimizer
+state, learning rate scheduler, and the epoch number. This allows you to continue the training process seamlessly from
+where it was left off.
 
-You can easily resume training in Ultralytics YOLO by setting the `resume` argument to `True` when calling the `train` method, and specifying the path to the `.pt` file containing the partially trained model weights.
+You can easily resume training in Ultralytics YOLO by setting the `resume` argument to `True` when calling the `train`
+method, and specifying the path to the `.pt` file containing the partially trained model weights.
 
 Below is an example of how to resume an interrupted training using Python and via the command line:
 
@@ -165,13 +186,21 @@ Below is an example of how to resume an interrupted training using Python and vi
         yolo train resume model=path/to/last.pt
         ```
 
-By setting `resume=True`, the `train` function will continue training from where it left off, using the state stored in the 'path/to/last.pt' file. If the `resume` argument is omitted or set to `False`, the `train` function will start a new training session.
+By setting `resume=True`, the `train` function will continue training from where it left off, using the state stored in
+the 'path/to/last.pt' file. If the `resume` argument is omitted or set to `False`, the `train` function will start a new
+training session.
 
-Remember that checkpoints are saved at the end of every epoch by default, or at fixed interval using the `save_period` argument, so you must complete at least 1 epoch to resume a training run.
+Remember that checkpoints are saved at the end of every epoch by default, or at fixed interval using the `save_period`
+argument, so you must complete at least 1 epoch to resume a training run.
 
 ## Arguments
 
-Training settings for YOLO models refer to the various hyperparameters and configurations used to train the model on a dataset. These settings can affect the model's performance, speed, and accuracy. Some common YOLO training settings include the batch size, learning rate, momentum, and weight decay. Other factors that may affect the training process include the choice of optimizer, the choice of loss function, and the size and composition of the training dataset. It is important to carefully tune and experiment with these settings to achieve the best possible performance for a given task.
+Training settings for YOLO models refer to the various hyperparameters and configurations used to train the model on a
+dataset. These settings can affect the model's performance, speed, and accuracy. Some common YOLO training settings
+include the batch size, learning rate, momentum, and weight decay. Other factors that may affect the training process
+include the choice of optimizer, the choice of loss function, and the size and composition of the training dataset. It
+is important to carefully tune and experiment with these settings to achieve the best possible performance for a given
+task.
 
 | Key               | Value    | Description                                                                                    |
 |-------------------|----------|------------------------------------------------------------------------------------------------|
@@ -224,13 +253,18 @@ Training settings for YOLO models refer to the various hyperparameters and confi
 
 ## Logging
 
-In training a YOLOv8 model, you might find it valuable to keep track of the model's performance over time. This is where logging comes into play. Ultralytics' YOLO provides support for three types of loggers - Comet, ClearML, and TensorBoard.
+In training a YOLOv8 model, you might find it valuable to keep track of the model's performance over time. This is where
+logging comes into play. Ultralytics' YOLO provides support for three types of loggers - Comet, ClearML, and
+TensorBoard.
 
-To use a logger, select it from the dropdown menu in the code snippet above and run it. The chosen logger will be installed and initialized.
+To use a logger, select it from the dropdown menu in the code snippet above and run it. The chosen logger will be
+installed and initialized.
 
 ### Comet
 
-[Comet](https://www.comet.ml/site/) is a platform that allows data scientists and developers to track, compare, explain and optimize experiments and models. It provides functionalities such as real-time metrics, code diffs, and hyperparameters tracking.
+[Comet](https://www.comet.ml/site/) is a platform that allows data scientists and developers to track, compare, explain
+and optimize experiments and models. It provides functionalities such as real-time metrics, code diffs, and
+hyperparameters tracking.
 
 To use Comet:
 
@@ -244,11 +278,14 @@ To use Comet:
         comet_ml.init()
         ```
 
-Remember to sign in to your Comet account on their website and get your API key. You will need to add this to your environment variables or your script to log your experiments.
+Remember to sign in to your Comet account on their website and get your API key. You will need to add this to your
+environment variables or your script to log your experiments.
 
 ### ClearML
 
-[ClearML](https://www.clear.ml/) is an open-source platform that automates tracking of experiments and helps with efficient sharing of resources. It is designed to help teams manage, execute, and reproduce their ML work more efficiently.
+[ClearML](https://www.clear.ml/) is an open-source platform that automates tracking of experiments and helps with
+efficient sharing of resources. It is designed to help teams manage, execute, and reproduce their ML work more
+efficiently.
 
 To use ClearML:
 
@@ -262,13 +299,17 @@ To use ClearML:
         clearml.browser_login()
         ```
 
-After running this script, you will need to sign in to your ClearML account on the browser and authenticate your session.
+After running this script, you will need to sign in to your ClearML account on the browser and authenticate your
+session.
 
 ### TensorBoard
 
-[TensorBoard](https://www.tensorflow.org/tensorboard) is a visualization toolkit for TensorFlow. It allows you to visualize your TensorFlow graph, plot quantitative metrics about the execution of your graph, and show additional data like images that pass through it.
+[TensorBoard](https://www.tensorflow.org/tensorboard) is a visualization toolkit for TensorFlow. It allows you to
+visualize your TensorFlow graph, plot quantitative metrics about the execution of your graph, and show additional data
+like images that pass through it.
 
-To use TensorBoard in [Google Colab](https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/examples/tutorial.ipynb):
+To use TensorBoard
+in [Google Colab](https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/examples/tutorial.ipynb):
 
 !!! example ""
 
@@ -289,4 +330,6 @@ To use TensorBoard locally run the below command and view results at http://loca
 
 This will load TensorBoard and direct it to the directory where your training logs are saved.
 
-After setting up your logger, you can then proceed with your model training. All training metrics will be automatically logged in your chosen platform, and you can access these logs to monitor your model's performance over time, compare different models, and identify areas for improvement.
+After setting up your logger, you can then proceed with your model training. All training metrics will be automatically
+logged in your chosen platform, and you can access these logs to monitor your model's performance over time, compare
+different models, and identify areas for improvement.

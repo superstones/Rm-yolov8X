@@ -1,6 +1,7 @@
 ---
 comments: true
-description: Learn how to set up and run YOLOv5 in a Docker container. This tutorial includes the prerequisites and step-by-step instructions.
+description: Learn how to set up and run YOLOv5 in a Docker container. This tutorial includes the prerequisites and
+step-by-step instructions.
 keywords: YOLOv5, Docker, Ultralytics, Image Detection, YOLOv5 Docker Image, Docker Container, Machine Learning, AI
 ---
 
@@ -8,17 +9,25 @@ keywords: YOLOv5, Docker, Ultralytics, Image Detection, YOLOv5 Docker Image, Doc
 
 This tutorial will guide you through the process of setting up and running YOLOv5 in a Docker container.
 
-You can also explore other quickstart options for YOLOv5, such as our [Colab Notebook](https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb) <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>, [GCP Deep Learning VM](https://docs.ultralytics.com/yolov5/environments/google_cloud_quickstart_tutorial), and [Amazon AWS](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial). *Updated: 21 April 2023*.
+You can also explore other quickstart options for YOLOv5, such as
+our [Colab Notebook](https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb) <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>, [GCP Deep Learning VM](https://docs.ultralytics.com/yolov5/environments/google_cloud_quickstart_tutorial),
+and [Amazon AWS](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial). *Updated: 21 April 2023*.
 
 ## Prerequisites
 
-1. **Nvidia Driver**: Version 455.23 or higher. Download from [Nvidia's website](https://www.nvidia.com/Download/index.aspx).
-2. **Nvidia-Docker**: Allows Docker to interact with your local GPU. Installation instructions are available on the [Nvidia-Docker GitHub repository](https://github.com/NVIDIA/nvidia-docker).
-3. **Docker Engine - CE**: Version 19.03 or higher. Download and installation instructions can be found on the [Docker website](https://docs.docker.com/install/).
+1. **Nvidia Driver**: Version 455.23 or higher. Download
+   from [Nvidia's website](https://www.nvidia.com/Download/index.aspx).
+2. **Nvidia-Docker**: Allows Docker to interact with your local GPU. Installation instructions are available on
+   the [Nvidia-Docker GitHub repository](https://github.com/NVIDIA/nvidia-docker).
+3. **Docker Engine - CE**: Version 19.03 or higher. Download and installation instructions can be found on
+   the [Docker website](https://docs.docker.com/install/).
 
 ## Step 1: Pull the YOLOv5 Docker Image
 
-The Ultralytics YOLOv5 DockerHub repository is available at [https://hub.docker.com/r/ultralytics/yolov5](https://hub.docker.com/r/ultralytics/yolov5). Docker Autobuild ensures that the `ultralytics/yolov5:latest` image is always in sync with the most recent repository commit. To pull the latest image, run the following command:
+The Ultralytics YOLOv5 DockerHub repository is available
+at [https://hub.docker.com/r/ultralytics/yolov5](https://hub.docker.com/r/ultralytics/yolov5). Docker Autobuild ensures
+that the `ultralytics/yolov5:latest` image is always in sync with the most recent repository commit. To pull the latest
+image, run the following command:
 
 ```bash
 sudo docker pull ultralytics/yolov5:latest

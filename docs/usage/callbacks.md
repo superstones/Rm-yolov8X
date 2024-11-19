@@ -1,12 +1,16 @@
 ---
 comments: true
-description: Learn how to utilize callbacks in the Ultralytics framework during train, val, export, and predict modes for enhanced functionality.
-keywords: Ultralytics, YOLO, callbacks guide, training callback, validation callback, export callback, prediction callback
+description: Learn how to utilize callbacks in the Ultralytics framework during train, val, export, and predict modes
+for enhanced functionality.
+keywords: Ultralytics, YOLO, callbacks guide, training callback, validation callback, export callback, prediction
+callback
 ---
 
 ## Callbacks
 
-Ultralytics framework supports callbacks as entry points in strategic stages of train, val, export, and predict modes. Each callback accepts a `Trainer`, `Validator`, or `Predictor` object depending on the operation type. All properties of these objects can be found in Reference section of the docs.
+Ultralytics framework supports callbacks as entry points in strategic stages of train, val, export, and predict modes.
+Each callback accepts a `Trainer`, `Validator`, or `Predictor` object depending on the operation type. All properties of
+these objects can be found in Reference section of the docs.
 
 ## Examples
 
@@ -25,6 +29,7 @@ def on_predict_batch_end(predictor):
     # Combine the prediction results with the corresponding frames
     predictor.results = zip(predictor.results, im0s)
 
+
 # Create a YOLO model instance
 model = YOLO(f'yolov8n.pt')
 
@@ -32,13 +37,15 @@ model = YOLO(f'yolov8n.pt')
 model.add_callback("on_predict_batch_end", on_predict_batch_end)
 
 # Iterate through the results and frames
-for (result, frame) in model.track/predict():
+for (result, frame) in model.track / predict():
     pass
 ```
 
 ## All callbacks
 
-Here are all supported callbacks. See callbacks [source code](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/callbacks/base.py) for additional details.
+Here are all supported callbacks. See
+callbacks [source code](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/callbacks/base.py) for
+additional details.
 
 ### Trainer Callbacks
 

@@ -1,6 +1,7 @@
 ---
 comments: true
-description: Guide for Validating YOLOv8 Models. Learn how to evaluate the performance of your YOLO models using validation settings and metrics with Python and CLI examples.
+description: Guide for Validating YOLOv8 Models. Learn how to evaluate the performance of your YOLO models using
+validation settings and metrics with Python and CLI examples.
 keywords: Ultralytics, YOLO Docs, YOLOv8, validation, model evaluation, hyperparameters, accuracy, metrics, Python, CLI
 ---
 
@@ -10,7 +11,10 @@ keywords: Ultralytics, YOLO Docs, YOLOv8, validation, model evaluation, hyperpar
 
 ## Introduction
 
-Validation is a critical step in the machine learning pipeline, allowing you to assess the quality of your trained models. Val mode in Ultralytics YOLOv8 provides a robust suite of tools and metrics for evaluating the performance of your object detection models. This guide serves as a complete resource for understanding how to effectively use the Val mode to ensure that your models are both accurate and reliable.
+Validation is a critical step in the machine learning pipeline, allowing you to assess the quality of your trained
+models. Val mode in Ultralytics YOLOv8 provides a robust suite of tools and metrics for evaluating the performance of
+your object detection models. This guide serves as a complete resource for understanding how to effectively use the Val
+mode to ensure that your models are both accurate and reliable.
 
 ## Why Validate with Ultralytics YOLO?
 
@@ -36,7 +40,8 @@ These are the notable functionalities offered by YOLOv8's Val mode:
 
 ## Usage Examples
 
-Validate trained YOLOv8n model accuracy on the COCO128 dataset. No argument need to passed as the `model` retains it's training `data` and arguments as model attributes. See Arguments section below for a full list of export arguments.
+Validate trained YOLOv8n model accuracy on the COCO128 dataset. No argument need to passed as the `model` retains it's
+training `data` and arguments as model attributes. See Arguments section below for a full list of export arguments.
 
 !!! example ""
 
@@ -65,7 +70,13 @@ Validate trained YOLOv8n model accuracy on the COCO128 dataset. No argument need
 
 ## Arguments
 
-Validation settings for YOLO models refer to the various hyperparameters and configurations used to evaluate the model's performance on a validation dataset. These settings can affect the model's performance, speed, and accuracy. Some common YOLO validation settings include the batch size, the frequency with which validation is performed during training, and the metrics used to evaluate the model's performance. Other factors that may affect the validation process include the size and composition of the validation dataset and the specific task the model is being used for. It is important to carefully tune and experiment with these settings to ensure that the model is performing well on the validation dataset and to detect and prevent overfitting.
+Validation settings for YOLO models refer to the various hyperparameters and configurations used to evaluate the model's
+performance on a validation dataset. These settings can affect the model's performance, speed, and accuracy. Some common
+YOLO validation settings include the batch size, the frequency with which validation is performed during training, and
+the metrics used to evaluate the model's performance. Other factors that may affect the validation process include the
+size and composition of the validation dataset and the specific task the model is being used for. It is important to
+carefully tune and experiment with these settings to ensure that the model is performing well on the validation dataset
+and to detect and prevent overfitting.
 
 | Key           | Value   | Description                                                        |
 |---------------|---------|--------------------------------------------------------------------|

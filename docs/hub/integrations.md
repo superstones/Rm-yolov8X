@@ -1,6 +1,7 @@
 ---
 comments: true
-description: Explore integration options for Ultralytics HUB. Currently featuring Roboflow for dataset integration and multiple export formats for your trained models.
+description: Explore integration options for Ultralytics HUB. Currently featuring Roboflow for dataset integration and
+multiple export formats for your trained models.
 keywords: Ultralytics HUB, Integrations, Roboflow, Dataset, Export, YOLOv5, YOLOv8, ONNX, CoreML, TensorRT, TensorFlow
 ---
 
@@ -8,7 +9,10 @@ keywords: Ultralytics HUB, Integrations, Roboflow, Dataset, Export, YOLOv5, YOLO
 
 🚧 **Under Construction** 🚧
 
-Welcome to the Integrations guide for [Ultralytics HUB](https://hub.ultralytics.com/)! We are in the process of expanding this section to provide you with comprehensive guidance on integrating your YOLOv5 and YOLOv8 models with various platforms and formats. Currently, Roboflow is our available dataset integration, with a wide range of export integrations for your trained models.
+Welcome to the Integrations guide for [Ultralytics HUB](https://hub.ultralytics.com/)! We are in the process of
+expanding this section to provide you with comprehensive guidance on integrating your YOLOv5 and YOLOv8 models with
+various platforms and formats. Currently, Roboflow is our available dataset integration, with a wide range of export
+integrations for your trained models.
 
 <p align="center">
   <br>

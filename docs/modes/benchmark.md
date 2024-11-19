@@ -1,7 +1,9 @@
 ---
 comments: true
-description: Learn how to profile speed and accuracy of YOLOv8 across various export formats; get insights on mAP50-95, accuracy_top5 metrics, and more.
-keywords: Ultralytics, YOLOv8, benchmarking, speed profiling, accuracy profiling, mAP50-95, accuracy_top5, ONNX, OpenVINO, TensorRT, YOLO export formats
+description: Learn how to profile speed and accuracy of YOLOv8 across various export formats; get insights on mAP50-95,
+accuracy_top5 metrics, and more.
+keywords: Ultralytics, YOLOv8, benchmarking, speed profiling, accuracy profiling, mAP50-95, accuracy_top5, ONNX,
+OpenVINO, TensorRT, YOLO export formats
 ---
 
 # Model Benchmarking with Ultralytics YOLO
@@ -10,7 +12,9 @@ keywords: Ultralytics, YOLOv8, benchmarking, speed profiling, accuracy profiling
 
 ## Introduction
 
-Once your model is trained and validated, the next logical step is to evaluate its performance in various real-world scenarios. Benchmark mode in Ultralytics YOLOv8 serves this purpose by providing a robust framework for assessing the speed and accuracy of your model across a range of export formats.
+Once your model is trained and validated, the next logical step is to evaluate its performance in various real-world
+scenarios. Benchmark mode in Ultralytics YOLOv8 serves this purpose by providing a robust framework for assessing the
+speed and accuracy of your model across a range of export formats.
 
 ## Why Is Benchmarking Crucial?
 
@@ -39,7 +43,8 @@ Once your model is trained and validated, the next logical step is to evaluate i
 
 ## Usage Examples
 
-Run YOLOv8n benchmarks on all supported export formats including ONNX, TensorRT etc. See Arguments section below for a full list of export arguments.
+Run YOLOv8n benchmarks on all supported export formats including ONNX, TensorRT etc. See Arguments section below for a
+full list of export arguments.
 
 !!! example ""
 
@@ -59,7 +64,8 @@ Run YOLOv8n benchmarks on all supported export formats including ONNX, TensorRT 
 
 ## Arguments
 
-Arguments such as `model`, `data`, `imgsz`, `half`, `device`, and `verbose` provide users with the flexibility to fine-tune the benchmarks to their specific needs and compare the performance of different export formats with ease.
+Arguments such as `model`, `data`, `imgsz`, `half`, `device`, and `verbose` provide users with the flexibility to
+fine-tune the benchmarks to their specific needs and compare the performance of different export formats with ease.
 
 | Key       | Value   | Description                                                           |
 |-----------|---------|-----------------------------------------------------------------------|

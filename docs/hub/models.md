@@ -1,14 +1,20 @@
 ---
 comments: true
-description: Learn how to use Ultralytics HUB models for efficient and user-friendly AI model training. For easy model creation, training, evaluation and deployment, follow our detailed guide.
+description: Learn how to use Ultralytics HUB models for efficient and user-friendly AI model training. For easy model
+creation, training, evaluation and deployment, follow our detailed guide.
 keywords: Ultralytics, HUB Models, AI model training, model creation, model training, model evaluation, model deployment
 ---
 
 # Ultralytics HUB Models
 
-[Ultralytics HUB](https://hub.ultralytics.com/) models provide a streamlined solution for training vision AI models on your custom datasets.
+[Ultralytics HUB](https://hub.ultralytics.com/) models provide a streamlined solution for training vision AI models on
+your custom datasets.
 
-The process is user-friendly and efficient, involving a simple three-step creation and accelerated training powered by Utralytics YOLOv8. During training, real-time updates on model metrics are available so that you can monitor each step of the progress. Once training is completed, you can preview your model and easily deploy it to real-world applications. Therefore, Ultralytics HUB offers a comprehensive yet straightforward system for model creation, training, evaluation, and deployment.
+The process is user-friendly and efficient, involving a simple three-step creation and accelerated training powered by
+Utralytics YOLOv8. During training, real-time updates on model metrics are available so that you can monitor each step
+of the progress. Once training is completed, you can preview your model and easily deploy it to real-world applications.
+Therefore, Ultralytics HUB offers a comprehensive yet straightforward system for model creation, training, evaluation,
+and deployment.
 
 ## Train Model
 
@@ -30,7 +36,8 @@ The **Train Model** dialog has three simple steps, explained below.
 
 ### 1. Dataset
 
-In this step, you have to select the dataset you want to train your model on. After you selected a dataset, click **Continue**.
+In this step, you have to select the dataset you want to train your model on. After you selected a dataset, click *
+*Continue**.
 
 ![Ultralytics HUB screenshot of the Train Model dialog with an arrow pointing to a dataset and one to the Continue button](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_train_model_4.jpg)
 
@@ -42,7 +49,8 @@ In this step, you have to select the dataset you want to train your model on. Af
 
 ### 2. Model
 
-In this step, you have to choose the project in which you want to create your model, the name of your model and your model's architecture.
+In this step, you have to choose the project in which you want to create your model, the name of your model and your
+model's architecture.
 
 ??? note "Note"
 
@@ -98,7 +106,8 @@ In order to start training your model, follow the instructions presented in this
 
     ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Start Training card](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_train_model_11.jpg)
 
-To start training your model using Google Colab, simply follow the instructions shown above or on the Google Colab notebook.
+To start training your model using Google Colab, simply follow the instructions shown above or on the Google Colab
+notebook.
 
 <a href="https://colab.research.google.com/github/ultralytics/hub/blob/master/hub.ipynb" target="_blank">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
@@ -124,11 +133,15 @@ You can preview your model if you click on the **Preview** tab and upload an ima
 
 ![Ultralytics HUB screenshot of the Preview tab (Test card) inside the Model page](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_preview_model_1.jpg)
 
-You can also use our Ultralytics Cloud API to effortlessly [run inference](https://docs.ultralytics.com/hub/inference_api) with your custom model.
+You can also use our Ultralytics Cloud API to
+effortlessly [run inference](https://docs.ultralytics.com/hub/inference_api) with your custom model.
 
 ![Ultralytics HUB screenshot of the Preview tab (Ultralytics Cloud API card) inside the Model page](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_preview_model_2.jpg)
 
-Furthermore, you can preview your model in real-time directly on your [iOS](https://apps.apple.com/xk/app/ultralytics/id1583935240) or [Android](https://play.google.com/store/apps/details?id=com.ultralytics.ultralytics_app) mobile device by [downloading](https://ultralytics.com/app_install) our [Ultralytics HUB Mobile Application](./app/index.md).
+Furthermore, you can preview your model in real-time directly on
+your [iOS](https://apps.apple.com/xk/app/ultralytics/id1583935240)
+or [Android](https://play.google.com/store/apps/details?id=com.ultralytics.ultralytics_app) mobile device
+by [downloading](https://ultralytics.com/app_install) our [Ultralytics HUB Mobile Application](./app/index.md).
 
 ![Ultralytics HUB screenshot of the Deploy tab inside the Model page with arrow pointing to the Real-Time Preview card](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_preview_model_3.jpg)
 
@@ -156,7 +169,8 @@ You can export your model to 13 different formats, including ONNX, OpenVINO, Cor
 
     You can choose to set the general access to "Private", in which case, only you will have access to it. Alternatively, you can set the general access to "Unlisted" which grants viewing access to anyone who has the direct link to the model, regardless of whether they have an Ultralytics HUB account or not.
 
-Navigate to the Model page of the model you want to share, open the model actions dropdown and click on the **Share** option. This action will trigger the **Share Model** dialog.
+Navigate to the Model page of the model you want to share, open the model actions dropdown and click on the **Share**
+option. This action will trigger the **Share Model** dialog.
 
 ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Share option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_share_model_1.jpg)
 
@@ -180,7 +194,8 @@ Now, anyone who has the direct link to your model can view it.
 
 ## Edit Model
 
-Navigate to the Model page of the model you want to edit, open the model actions dropdown and click on the **Edit** option. This action will trigger the **Update Model** dialog.
+Navigate to the Model page of the model you want to edit, open the model actions dropdown and click on the **Edit**
+option. This action will trigger the **Update Model** dialog.
 
 ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Edit option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_edit_model_1.jpg)
 
@@ -196,7 +211,8 @@ Apply the desired modifications to your model and then confirm the changes by cl
 
 ## Delete Model
 
-Navigate to the Model page of the model you want to delete, open the model actions dropdown and click on the **Delete** option. This action will delete the model.
+Navigate to the Model page of the model you want to delete, open the model actions dropdown and click on the **Delete**
+option. This action will delete the model.
 
 ![Ultralytics HUB screenshot of the Model page with an arrow pointing to the Delete option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/models/hub_delete_model_1.jpg)
 

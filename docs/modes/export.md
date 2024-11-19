@@ -1,7 +1,9 @@
 ---
 comments: true
-description: Step-by-step guide on exporting your YOLOv8 models to various format like ONNX, TensorRT, CoreML and more for deployment. Explore now!.
-keywords: YOLO, YOLOv8, Ultralytics, Model export, ONNX, TensorRT, CoreML, TensorFlow SavedModel, OpenVINO, PyTorch, export model
+description: Step-by-step guide on exporting your YOLOv8 models to various format like ONNX, TensorRT, CoreML and more
+for deployment. Explore now!.
+keywords: YOLO, YOLOv8, Ultralytics, Model export, ONNX, TensorRT, CoreML, TensorFlow SavedModel, OpenVINO, PyTorch,
+export model
 ---
 
 # Model Export with Ultralytics YOLO
@@ -10,7 +12,10 @@ keywords: YOLO, YOLOv8, Ultralytics, Model export, ONNX, TensorRT, CoreML, Tenso
 
 ## Introduction
 
-The ultimate goal of training a model is to deploy it for real-world applications. Export mode in Ultralytics YOLOv8 offers a versatile range of options for exporting your trained model to different formats, making it deployable across various platforms and devices. This comprehensive guide aims to walk you through the nuances of model exporting, showcasing how to achieve maximum compatibility and performance.
+The ultimate goal of training a model is to deploy it for real-world applications. Export mode in Ultralytics YOLOv8
+offers a versatile range of options for exporting your trained model to different formats, making it deployable across
+various platforms and devices. This comprehensive guide aims to walk you through the nuances of model exporting,
+showcasing how to achieve maximum compatibility and performance.
 
 <p align="center">
   <br>
@@ -46,7 +51,8 @@ Here are some of the standout functionalities:
 
 ## Usage Examples
 
-Export a YOLOv8n model to a different format like ONNX or TensorRT. See Arguments section below for a full list of export arguments.
+Export a YOLOv8n model to a different format like ONNX or TensorRT. See Arguments section below for a full list of
+export arguments.
 
 !!! example ""
 
@@ -71,7 +77,14 @@ Export a YOLOv8n model to a different format like ONNX or TensorRT. See Argument
 
 ## Arguments
 
-Export settings for YOLO models refer to the various configurations and options used to save or export the model for use in other environments or platforms. These settings can affect the model's performance, size, and compatibility with different systems. Some common YOLO export settings include the format of the exported model file (e.g. ONNX, TensorFlow SavedModel), the device on which the model will be run (e.g. CPU, GPU), and the presence of additional features such as masks or multiple labels per box. Other factors that may affect the export process include the specific task the model is being used for and the requirements or constraints of the target environment or platform. It is important to carefully consider and configure these settings to ensure that the exported model is optimized for the intended use case and can be used effectively in the target environment.
+Export settings for YOLO models refer to the various configurations and options used to save or export the model for use
+in other environments or platforms. These settings can affect the model's performance, size, and compatibility with
+different systems. Some common YOLO export settings include the format of the exported model file (e.g. ONNX, TensorFlow
+SavedModel), the device on which the model will be run (e.g. CPU, GPU), and the presence of additional features such as
+masks or multiple labels per box. Other factors that may affect the export process include the specific task the model
+is being used for and the requirements or constraints of the target environment or platform. It is important to
+carefully consider and configure these settings to ensure that the exported model is optimized for the intended use case
+and can be used effectively in the target environment.
 
 | Key         | Value           | Description                                          |
 |-------------|-----------------|------------------------------------------------------|
@@ -89,7 +102,8 @@ Export settings for YOLO models refer to the various configurations and options 
 
 ## Export Formats
 
-Available YOLOv8 export formats are in the table below. You can export to any format using the `format` argument, i.e. `format='onnx'` or `format='engine'`.
+Available YOLOv8 export formats are in the table below. You can export to any format using the `format` argument,
+i.e. `format='onnx'` or `format='engine'`.
 
 | Format                                                             | `format` Argument | Model                     | Metadata | Arguments                                           |
 |--------------------------------------------------------------------|-------------------|---------------------------|----------|-----------------------------------------------------|

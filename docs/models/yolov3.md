@@ -1,6 +1,7 @@
 ---
 comments: true
-description: Get an overview of YOLOv3, YOLOv3-Ultralytics and YOLOv3u. Learn about their key features, usage, and supported tasks for object detection.
+description: Get an overview of YOLOv3, YOLOv3-Ultralytics and YOLOv3u. Learn about their key features, usage, and
+supported tasks for object detection.
 keywords: YOLOv3, YOLOv3-Ultralytics, YOLOv3u, Object Detection, Inference, Training, Ultralytics
 ---
 
@@ -8,23 +9,39 @@ keywords: YOLOv3, YOLOv3-Ultralytics, YOLOv3u, Object Detection, Inference, Trai
 
 ## Overview
 
-This document presents an overview of three closely related object detection models, namely [YOLOv3](https://pjreddie.com/darknet/yolo/), [YOLOv3-Ultralytics](https://github.com/ultralytics/yolov3), and [YOLOv3u](https://github.com/ultralytics/ultralytics).
+This document presents an overview of three closely related object detection models,
+namely [YOLOv3](https://pjreddie.com/darknet/yolo/), [YOLOv3-Ultralytics](https://github.com/ultralytics/yolov3),
+and [YOLOv3u](https://github.com/ultralytics/ultralytics).
 
-1. **YOLOv3:** This is the third version of the You Only Look Once (YOLO) object detection algorithm. Originally developed by Joseph Redmon, YOLOv3 improved on its predecessors by introducing features such as multiscale predictions and three different sizes of detection kernels.
+1. **YOLOv3:** This is the third version of the You Only Look Once (YOLO) object detection algorithm. Originally
+   developed by Joseph Redmon, YOLOv3 improved on its predecessors by introducing features such as multiscale
+   predictions and three different sizes of detection kernels.
 
-2. **YOLOv3-Ultralytics:** This is Ultralytics' implementation of the YOLOv3 model. It reproduces the original YOLOv3 architecture and offers additional functionalities, such as support for more pre-trained models and easier customization options.
+2. **YOLOv3-Ultralytics:** This is Ultralytics' implementation of the YOLOv3 model. It reproduces the original YOLOv3
+   architecture and offers additional functionalities, such as support for more pre-trained models and easier
+   customization options.
 
-3. **YOLOv3u:** This is an updated version of YOLOv3-Ultralytics that incorporates the anchor-free, objectness-free split head used in YOLOv8 models. YOLOv3u maintains the same backbone and neck architecture as YOLOv3 but with the updated detection head from YOLOv8.
+3. **YOLOv3u:** This is an updated version of YOLOv3-Ultralytics that incorporates the anchor-free, objectness-free
+   split head used in YOLOv8 models. YOLOv3u maintains the same backbone and neck architecture as YOLOv3 but with the
+   updated detection head from YOLOv8.
 
 ![Ultralytics YOLOv3](https://raw.githubusercontent.com/ultralytics/assets/main/yolov3/banner-yolov3.png)
 
 ## Key Features
 
-- **YOLOv3:** Introduced the use of three different scales for detection, leveraging three different sizes of detection kernels: 13x13, 26x26, and 52x52. This significantly improved detection accuracy for objects of different sizes. Additionally, YOLOv3 added features such as multi-label predictions for each bounding box and a better feature extractor network.
+- **YOLOv3:** Introduced the use of three different scales for detection, leveraging three different sizes of detection
+  kernels: 13x13, 26x26, and 52x52. This significantly improved detection accuracy for objects of different sizes.
+  Additionally, YOLOv3 added features such as multi-label predictions for each bounding box and a better feature
+  extractor network.
 
-- **YOLOv3-Ultralytics:** Ultralytics' implementation of YOLOv3 provides the same performance as the original model but comes with added support for more pre-trained models, additional training methods, and easier customization options. This makes it more versatile and user-friendly for practical applications.
+- **YOLOv3-Ultralytics:** Ultralytics' implementation of YOLOv3 provides the same performance as the original model but
+  comes with added support for more pre-trained models, additional training methods, and easier customization options.
+  This makes it more versatile and user-friendly for practical applications.
 
-- **YOLOv3u:** This updated model incorporates the anchor-free, objectness-free split head from YOLOv8. By eliminating the need for pre-defined anchor boxes and objectness scores, this detection head design can improve the model's ability to detect objects of varying sizes and shapes. This makes YOLOv3u more robust and accurate for object detection tasks.
+- **YOLOv3u:** This updated model incorporates the anchor-free, objectness-free split head from YOLOv8. By eliminating
+  the need for pre-defined anchor boxes and objectness scores, this detection head design can improve the model's
+  ability to detect objects of varying sizes and shapes. This makes YOLOv3u more robust and accurate for object
+  detection tasks.
 
 ## Supported Tasks
 
@@ -43,13 +60,15 @@ All three models support the following modes:
 
 ## Performance
 
-Below is a comparison of the performance of the three models. The performance is measured in terms of the Mean Average Precision (mAP) on the COCO dataset:
+Below is a comparison of the performance of the three models. The performance is measured in terms of the Mean Average
+Precision (mAP) on the COCO dataset:
 
 TODO
 
 ## Usage
 
-You can use YOLOv3 for object detection tasks using the Ultralytics repository. The following is a sample code snippet showing how to use YOLOv3 model for inference:
+You can use YOLOv3 for object detection tasks using the Ultralytics repository. The following is a sample code snippet
+showing how to use YOLOv3 model for inference:
 
 !!! example ""
 

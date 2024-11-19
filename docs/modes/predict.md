@@ -1,7 +1,9 @@
 ---
 comments: true
-description: Discover how to use YOLOv8 predict mode for various tasks. Learn about different inference sources like images, videos, and data formats.
-keywords: Ultralytics, YOLOv8, predict mode, inference sources, prediction tasks, streaming mode, image processing, video processing, machine learning, AI
+description: Discover how to use YOLOv8 predict mode for various tasks. Learn about different inference sources like
+images, videos, and data formats.
+keywords: Ultralytics, YOLOv8, predict mode, inference sources, prediction tasks, streaming mode, image processing,
+video processing, machine learning, AI
 ---
 
 # Model Prediction with Ultralytics YOLO
@@ -10,7 +12,9 @@ keywords: Ultralytics, YOLOv8, predict mode, inference sources, prediction tasks
 
 ## Introduction
 
-In the world of machine learning and computer vision, the process of making sense out of visual data is called 'inference' or 'prediction'. Ultralytics YOLOv8 offers a powerful feature known as **predict mode** that is tailored for high-performance, real-time inference on a wide range of data sources.
+In the world of machine learning and computer vision, the process of making sense out of visual data is called '
+inference' or 'prediction'. Ultralytics YOLOv8 offers a powerful feature known as **predict mode** that is tailored for
+high-performance, real-time inference on a wide range of data sources.
 
 <p align="center">
   <br>
@@ -37,18 +41,24 @@ Here's why you should consider YOLOv8's predict mode for your various inference 
 - **Versatility:** Capable of making inferences on images, videos, and even live streams.
 - **Performance:** Engineered for real-time, high-speed processing without sacrificing accuracy.
 - **Ease of Use:** Intuitive Python and CLI interfaces for rapid deployment and testing.
-- **Highly Customizable:** Various settings and parameters to tune the model's inference behavior according to your specific requirements.
+- **Highly Customizable:** Various settings and parameters to tune the model's inference behavior according to your
+  specific requirements.
 
 ### Key Features of Predict Mode
 
 YOLOv8's predict mode is designed to be robust and versatile, featuring:
 
-- **Multiple Data Source Compatibility:** Whether your data is in the form of individual images, a collection of images, video files, or real-time video streams, predict mode has you covered.
-- **Streaming Mode:** Use the streaming feature to generate a memory-efficient generator of `Results` objects. Enable this by setting `stream=True` in the predictor's call method.
-- **Batch Processing:** The ability to process multiple images or video frames in a single batch, further speeding up inference time.
-- **Integration Friendly:** Easily integrate with existing data pipelines and other software components, thanks to its flexible API.
+- **Multiple Data Source Compatibility:** Whether your data is in the form of individual images, a collection of images,
+  video files, or real-time video streams, predict mode has you covered.
+- **Streaming Mode:** Use the streaming feature to generate a memory-efficient generator of `Results` objects. Enable
+  this by setting `stream=True` in the predictor's call method.
+- **Batch Processing:** The ability to process multiple images or video frames in a single batch, further speeding up
+  inference time.
+- **Integration Friendly:** Easily integrate with existing data pipelines and other software components, thanks to its
+  flexible API.
 
-Ultralytics YOLO models return either a Python list of `Results` objects, or a memory-efficient Python generator of `Results` objects when `stream=True` is passed to the model during inference:
+Ultralytics YOLO models return either a Python list of `Results` objects, or a memory-efficient Python generator
+of `Results` objects when `stream=True` is passed to the model during inference:
 
 !!! example "Predict"
 
@@ -90,7 +100,10 @@ Ultralytics YOLO models return either a Python list of `Results` objects, or a m
 
 ## Inference Sources
 
-YOLOv8 can process different types of input sources for inference, as shown in the table below. The sources include static images, video streams, and various data formats. The table also indicates whether each source can be used in streaming mode with the argument `stream=True` ✅. Streaming mode is beneficial for processing videos or live streams as it creates a generator of results instead of loading all frames into memory.
+YOLOv8 can process different types of input sources for inference, as shown in the table below. The sources include
+static images, video streams, and various data formats. The table also indicates whether each source can be used in
+streaming mode with the argument `stream=True` ✅. Streaming mode is beneficial for processing videos or live streams as
+it creates a generator of results instead of loading all frames into memory.
 
 !!! tip "Tip"
 
@@ -369,7 +382,9 @@ All supported arguments:
 
 ## Image and Video Formats
 
-YOLOv8 supports various image and video formats, as specified in [data/utils.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/data/utils.py). See the tables below for the valid suffixes and example predict commands.
+YOLOv8 supports various image and video formats, as specified
+in [data/utils.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/data/utils.py). See the tables below
+for the valid suffixes and example predict commands.
 
 ### Images
 
@@ -601,7 +616,9 @@ For more details see the `Probs` class [documentation](../reference/engine/resul
 
 ## Plotting Results
 
-You can use the `plot()` method of a `Result` objects to visualize predictions. It plots all prediction types (boxes, masks, keypoints, probabilities, etc.) contained in the `Results` object onto a numpy array that can then be shown or saved.
+You can use the `plot()` method of a `Result` objects to visualize predictions. It plots all prediction types (boxes,
+masks, keypoints, probabilities, etc.) contained in the `Results` object onto a numpy array that can then be shown or
+saved.
 
 !!! example "Plotting"
 
@@ -643,7 +660,8 @@ You can use the `plot()` method of a `Result` objects to visualize predictions. 
 
 ## Streaming Source `for`-loop
 
-Here's a Python script using OpenCV (`cv2`) and YOLOv8 to run inference on video frames. This script assumes you have already installed the necessary packages (`opencv-python` and `ultralytics`).
+Here's a Python script using OpenCV (`cv2`) and YOLOv8 to run inference on video frames. This script assumes you have
+already installed the necessary packages (`opencv-python` and `ultralytics`).
 
 !!! example "Streaming for-loop"
 
@@ -685,4 +703,5 @@ Here's a Python script using OpenCV (`cv2`) and YOLOv8 to run inference on video
     cv2.destroyAllWindows()
     ```
 
-This script will run predictions on each frame of the video, visualize the results, and display them in a window. The loop can be exited by pressing 'q'.
+This script will run predictions on each frame of the video, visualize the results, and display them in a window. The
+loop can be exited by pressing 'q'.

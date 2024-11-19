@@ -1,27 +1,41 @@
 ---
 comments: true
-description: Explore detailed documentation of YOLO-NAS, a superior object detection model. Learn about its features, pre-trained models, usage with Ultralytics Python API, and more.
-keywords: YOLO-NAS, Deci AI, object detection, deep learning, neural architecture search, Ultralytics Python API, YOLO model, pre-trained models, quantization, optimization, COCO, Objects365, Roboflow 100
+description: Explore detailed documentation of YOLO-NAS, a superior object detection model. Learn about its features,
+pre-trained models, usage with Ultralytics Python API, and more.
+keywords: YOLO-NAS, Deci AI, object detection, deep learning, neural architecture search, Ultralytics Python API, YOLO
+model, pre-trained models, quantization, optimization, COCO, Objects365, Roboflow 100
 ---
 
 # YOLO-NAS
 
 ## Overview
 
-Developed by Deci AI, YOLO-NAS is a groundbreaking object detection foundational model. It is the product of advanced Neural Architecture Search technology, meticulously designed to address the limitations of previous YOLO models. With significant improvements in quantization support and accuracy-latency trade-offs, YOLO-NAS represents a major leap in object detection.
+Developed by Deci AI, YOLO-NAS is a groundbreaking object detection foundational model. It is the product of advanced
+Neural Architecture Search technology, meticulously designed to address the limitations of previous YOLO models. With
+significant improvements in quantization support and accuracy-latency trade-offs, YOLO-NAS represents a major leap in
+object detection.
 
 ![Model example image](https://learnopencv.com/wp-content/uploads/2023/05/yolo-nas_COCO_map_metrics.png)
-**Overview of YOLO-NAS.** YOLO-NAS employs quantization-aware blocks and selective quantization for optimal performance. The model, when converted to its INT8 quantized version, experiences a minimal precision drop, a significant improvement over other models. These advancements culminate in a superior architecture with unprecedented object detection capabilities and outstanding performance.
+**Overview of YOLO-NAS.** YOLO-NAS employs quantization-aware blocks and selective quantization for optimal performance.
+The model, when converted to its INT8 quantized version, experiences a minimal precision drop, a significant improvement
+over other models. These advancements culminate in a superior architecture with unprecedented object detection
+capabilities and outstanding performance.
 
 ### Key Features
 
-- **Quantization-Friendly Basic Block:** YOLO-NAS introduces a new basic block that is friendly to quantization, addressing one of the significant limitations of previous YOLO models.
-- **Sophisticated Training and Quantization:** YOLO-NAS leverages advanced training schemes and post-training quantization to enhance performance.
-- **AutoNAC Optimization and Pre-training:** YOLO-NAS utilizes AutoNAC optimization and is pre-trained on prominent datasets such as COCO, Objects365, and Roboflow 100. This pre-training makes it extremely suitable for downstream object detection tasks in production environments.
+- **Quantization-Friendly Basic Block:** YOLO-NAS introduces a new basic block that is friendly to quantization,
+  addressing one of the significant limitations of previous YOLO models.
+- **Sophisticated Training and Quantization:** YOLO-NAS leverages advanced training schemes and post-training
+  quantization to enhance performance.
+- **AutoNAC Optimization and Pre-training:** YOLO-NAS utilizes AutoNAC optimization and is pre-trained on prominent
+  datasets such as COCO, Objects365, and Roboflow 100. This pre-training makes it extremely suitable for downstream
+  object detection tasks in production environments.
 
 ## Pre-trained Models
 
-Experience the power of next-generation object detection with the pre-trained YOLO-NAS models provided by Ultralytics. These models are designed to deliver top-notch performance in terms of both speed and accuracy. Choose from a variety of options tailored to your specific needs:
+Experience the power of next-generation object detection with the pre-trained YOLO-NAS models provided by Ultralytics.
+These models are designed to deliver top-notch performance in terms of both speed and accuracy. Choose from a variety of
+options tailored to your specific needs:
 
 | Model            | mAP   | Latency (ms) |
 |------------------|-------|--------------|
@@ -32,11 +46,13 @@ Experience the power of next-generation object detection with the pre-trained YO
 | YOLO-NAS M INT-8 | 51.0  | 3.78         |
 | YOLO-NAS L INT-8 | 52.1  | 4.78         |
 
-Each model variant is designed to offer a balance between Mean Average Precision (mAP) and latency, helping you optimize your object detection tasks for both performance and speed.
+Each model variant is designed to offer a balance between Mean Average Precision (mAP) and latency, helping you optimize
+your object detection tasks for both performance and speed.
 
 ## Usage
 
-Ultralytics has made YOLO-NAS models easy to integrate into your Python applications via our `ultralytics` python package. The package provides a user-friendly Python API to streamline the process.
+Ultralytics has made YOLO-NAS models easy to integrate into your Python applications via our `ultralytics` python
+package. The package provides a user-friendly Python API to streamline the process.
 
 The following examples show how to use YOLO-NAS models with the `ultralytics` package for inference and validation:
 
@@ -82,7 +98,8 @@ In this example we validate YOLO-NAS-s on the COCO8 dataset.
 
 ### Supported Tasks
 
-The YOLO-NAS models are primarily designed for object detection tasks. You can download the pre-trained weights for each variant of the model as follows:
+The YOLO-NAS models are primarily designed for object detection tasks. You can download the pre-trained weights for each
+variant of the model as follows:
 
 | Model Type | Pre-trained Weights                                                                           | Tasks Supported  |
 |------------|-----------------------------------------------------------------------------------------------|------------------|
@@ -92,7 +109,8 @@ The YOLO-NAS models are primarily designed for object detection tasks. You can d
 
 ### Supported Modes
 
-The YOLO-NAS models support both inference and validation modes, allowing you to predict and validate results with ease. Training mode, however, is currently not supported.
+The YOLO-NAS models support both inference and validation modes, allowing you to predict and validate results with ease.
+Training mode, however, is currently not supported.
 
 | Mode       | Supported          |
 |------------|--------------------|
@@ -122,6 +140,11 @@ If you employ YOLO-NAS in your research or development work, please cite SuperGr
         }
         ```
 
-We express our gratitude to Deci AI's [SuperGradients](https://github.com/Deci-AI/super-gradients/) team for their efforts in creating and maintaining this valuable resource for the computer vision community. We believe YOLO-NAS, with its innovative architecture and superior object detection capabilities, will become a critical tool for developers and researchers alike.
+We express our gratitude to Deci AI's [SuperGradients](https://github.com/Deci-AI/super-gradients/) team for their
+efforts in creating and maintaining this valuable resource for the computer vision community. We believe YOLO-NAS, with
+its innovative architecture and superior object detection capabilities, will become a critical tool for developers and
+researchers alike.
 
-*Keywords: YOLO-NAS, Deci AI, object detection, deep learning, neural architecture search, Ultralytics Python API, YOLO model, SuperGradients, pre-trained models, quantization-friendly basic block, advanced training schemes, post-training quantization, AutoNAC optimization, COCO, Objects365, Roboflow 100*
+*Keywords: YOLO-NAS, Deci AI, object detection, deep learning, neural architecture search, Ultralytics Python API, YOLO
+model, SuperGradients, pre-trained models, quantization-friendly basic block, advanced training schemes, post-training
+quantization, AutoNAC optimization, COCO, Objects365, Roboflow 100*

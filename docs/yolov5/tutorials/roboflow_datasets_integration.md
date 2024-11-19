@@ -1,12 +1,15 @@
 ---
 comments: true
-description: Learn how to use Roboflow for organizing, labelling, preparing, and hosting your datasets for YOLOv5 models. Enhance your model deployments with our platform.
-keywords: Ultralytics, YOLOv5, Roboflow, data organization, data labelling, data preparation, model deployment, active learning, machine learning pipeline
+description: Learn how to use Roboflow for organizing, labelling, preparing, and hosting your datasets for YOLOv5
+models. Enhance your model deployments with our platform.
+keywords: Ultralytics, YOLOv5, Roboflow, data organization, data labelling, data preparation, model deployment, active
+learning, machine learning pipeline
 ---
 
 # Roboflow Datasets
 
-You can now use Roboflow to organize, label, prepare, version, and host your datasets for training YOLOv5 🚀 models. Roboflow is free to use with YOLOv5 if you make your workspace public. UPDATED 7 June 2023.
+You can now use Roboflow to organize, label, prepare, version, and host your datasets for training YOLOv5 🚀 models.
+Roboflow is free to use with YOLOv5 if you make your workspace public. UPDATED 7 June 2023.
 
 !!! warning
 
@@ -14,7 +17,9 @@ You can now use Roboflow to organize, label, prepare, version, and host your dat
 
 ## Upload
 
-You can upload your data to Roboflow via [web UI](https://docs.roboflow.com/adding-data), [rest API](https://docs.roboflow.com/adding-data/upload-api), or [python](https://docs.roboflow.com/python).
+You can upload your data to Roboflow
+via [web UI](https://docs.roboflow.com/adding-data), [rest API](https://docs.roboflow.com/adding-data/upload-api),
+or [python](https://docs.roboflow.com/python).
 
 ## Labeling
 
@@ -24,7 +29,8 @@ After uploading data to Roboflow, you can label your data and review previous la
 
 ## Versioning
 
-You can make versions of your dataset with different preprocessing and offline augmentation options. YOLOv5 does online augmentations natively, so be intentional when layering Roboflow's offline augs on top.
+You can make versions of your dataset with different preprocessing and offline augmentation options. YOLOv5 does online
+augmentations natively, so be intentional when layering Roboflow's offline augs on top.
 
 ![Roboflow Preprocessing](https://roboflow-darknet.s3.us-east-2.amazonaws.com/robolfow-preprocessing.png)
 
@@ -47,6 +53,9 @@ We have released a custom training tutorial demonstrating all of the above capab
 
 ## Active Learning
 
-The real world is messy and your model will invariably encounter situations your dataset didn't anticipate. Using [active learning](https://blog.roboflow.com/what-is-active-learning/) is an important strategy to iteratively improve your dataset and model. With the Roboflow and YOLOv5 integration, you can quickly make improvements on your model deployments by using a battle tested machine learning pipeline.
+The real world is messy and your model will invariably encounter situations your dataset didn't anticipate.
+Using [active learning](https://blog.roboflow.com/what-is-active-learning/) is an important strategy to iteratively
+improve your dataset and model. With the Roboflow and YOLOv5 integration, you can quickly make improvements on your
+model deployments by using a battle tested machine learning pipeline.
 
 <p align=""><a href="https://roboflow.com/?ref=ultralytics"><img width="1000" src="https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/615627e5824c9c6195abfda9_computer-vision-cycle.png"/></a></p>

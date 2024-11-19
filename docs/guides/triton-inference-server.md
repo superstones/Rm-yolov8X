@@ -1,12 +1,18 @@
 ---
 comments: true
-description: A step-by-step guide on integrating Ultralytics YOLOv8 with Triton Inference Server for scalable and high-performance deep learning inference deployments.
-keywords: YOLOv8, Triton Inference Server, ONNX, Deep Learning Deployment, Scalable Inference, Ultralytics, NVIDIA, Object Detection, Cloud Inferencing
+description: A step-by-step guide on integrating Ultralytics YOLOv8 with Triton Inference Server for scalable and
+high-performance deep learning inference deployments.
+keywords: YOLOv8, Triton Inference Server, ONNX, Deep Learning Deployment, Scalable Inference, Ultralytics, NVIDIA,
+Object Detection, Cloud Inferencing
 ---
 
 # Triton Inference Server with Ultralytics YOLOv8
 
-The [Triton Inference Server](https://developer.nvidia.com/nvidia-triton-inference-server) (formerly known as TensorRT Inference Server) is an open-source software solution developed by NVIDIA. It provides a cloud inferencing solution optimized for NVIDIA GPUs. Triton simplifies the deployment of AI models at scale in production. Integrating Ultralytics YOLOv8 with Triton Inference Server allows you to deploy scalable, high-performance deep learning inference workloads. This guide provides steps to set up and test the integration.
+The [Triton Inference Server](https://developer.nvidia.com/nvidia-triton-inference-server) (formerly known as TensorRT
+Inference Server) is an open-source software solution developed by NVIDIA. It provides a cloud inferencing solution
+optimized for NVIDIA GPUs. Triton simplifies the deployment of AI models at scale in production. Integrating Ultralytics
+YOLOv8 with Triton Inference Server allows you to deploy scalable, high-performance deep learning inference workloads.
+This guide provides steps to set up and test the integration.
 
 <p align="center">
   <br>
@@ -21,7 +27,9 @@ The [Triton Inference Server](https://developer.nvidia.com/nvidia-triton-inferen
 
 ## What is Triton Inference Server?
 
-Triton Inference Server is designed to deploy a variety of AI models in production. It supports a wide range of deep learning and machine learning frameworks, including TensorFlow, PyTorch, ONNX Runtime, and many others. Its primary use cases are:
+Triton Inference Server is designed to deploy a variety of AI models in production. It supports a wide range of deep
+learning and machine learning frameworks, including TensorFlow, PyTorch, ONNX Runtime, and many others. Its primary use
+cases are:
 
 - Serving multiple models from a single server instance.
 - Dynamic model loading and unloading without server restart.
@@ -40,7 +48,9 @@ Ensure you have the following prerequisites before proceeding:
 
 ## Exporting YOLOv8 to ONNX Format
 
-Before deploying the model on Triton, it must be exported to the ONNX format. ONNX (Open Neural Network Exchange) is a format that allows models to be transferred between different deep learning frameworks. Use the `export` function from the `YOLO` class:
+Before deploying the model on Triton, it must be exported to the ONNX format. ONNX (Open Neural Network Exchange) is a
+format that allows models to be transferred between different deep learning frameworks. Use the `export` function from
+the `YOLO` class:
 
 ```python
 from ultralytics import YOLO
@@ -134,4 +144,8 @@ subprocess.call(f'docker kill {container_id}', shell=True)
 
 ---
 
-By following the above steps, you can deploy and run Ultralytics YOLOv8 models efficiently on Triton Inference Server, providing a scalable and high-performance solution for deep learning inference tasks. If you face any issues or have further queries, refer to the [official Triton documentation](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html) or reach out to the Ultralytics community for support.
+By following the above steps, you can deploy and run Ultralytics YOLOv8 models efficiently on Triton Inference Server,
+providing a scalable and high-performance solution for deep learning inference tasks. If you face any issues or have
+further queries, refer to
+the [official Triton documentation](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html)
+or reach out to the Ultralytics community for support.

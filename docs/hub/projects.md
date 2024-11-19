@@ -1,18 +1,25 @@
 ---
 comments: true
-description: Learn how to manage Ultralytics HUB projects. Understand effective strategies to create, share, edit, delete, and compare models in an organized workspace.
-keywords: Ultralytics, HUB projects, Create project, Edit project, Share project, Delete project, Compare Models, Model Management
+description: Learn how to manage Ultralytics HUB projects. Understand effective strategies to create, share, edit,
+delete, and compare models in an organized workspace.
+keywords: Ultralytics, HUB projects, Create project, Edit project, Share project, Delete project, Compare Models, Model
+Management
 ---
 
 # Ultralytics HUB Projects
 
-[Ultralytics HUB](https://hub.ultralytics.com/) projects provide an effective solution for consolidating and managing your models. If you are working with several models that perform similar tasks or have related purposes, Ultralytics HUB projects allow you to group these models together.
+[Ultralytics HUB](https://hub.ultralytics.com/) projects provide an effective solution for consolidating and managing
+your models. If you are working with several models that perform similar tasks or have related purposes, Ultralytics HUB
+projects allow you to group these models together.
 
-This creates a unified and organized workspace that facilitates easier model management, comparison and development. Having similar models or various iterations together can facilitate rapid benchmarking, as you can compare their effectiveness. This can lead to faster, more insightful iterative development and refinement of your models.
+This creates a unified and organized workspace that facilitates easier model management, comparison and development.
+Having similar models or various iterations together can facilitate rapid benchmarking, as you can compare their
+effectiveness. This can lead to faster, more insightful iterative development and refinement of your models.
 
 ## Create Project
 
-Navigate to the [Projects](https://hub.ultralytics.com/projects) page by clicking on the **Projects** button in the sidebar.
+Navigate to the [Projects](https://hub.ultralytics.com/projects) page by clicking on the **Projects** button in the
+sidebar.
 
 ![Ultralytics HUB screenshot of the Home page with an arrow pointing to the Projects button in the sidebar](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_create_project_1.jpg)
 
@@ -22,13 +29,16 @@ Navigate to the [Projects](https://hub.ultralytics.com/projects) page by clickin
 
     ![Ultralytics HUB screenshot of the Home page with an arrow pointing to the Create Project card](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_create_project_2.jpg)
 
-Click on the **Create Project** button on the top right of the page. This action will trigger the **Create Project** dialog, opening up a suite of options for tailoring your project to your needs.
+Click on the **Create Project** button on the top right of the page. This action will trigger the **Create Project**
+dialog, opening up a suite of options for tailoring your project to your needs.
 
 ![Ultralytics HUB screenshot of the Projects page with an arrow pointing to the Create Project button](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_create_project_3.jpg)
 
-Type the name of your project in the _Project name_ field or keep the default name and finalize the project creation with a single click.
+Type the name of your project in the _Project name_ field or keep the default name and finalize the project creation
+with a single click.
 
-You have the additional option to enrich your project with a description and a unique image, enhancing its recognizability on the Projects page.
+You have the additional option to enrich your project with a description and a unique image, enhancing its
+recognizability on the Projects page.
 
 When you're happy with your project configuration, click **Create**.
 
@@ -54,7 +64,8 @@ Next, [train a model](https://docs.ultralytics.com/hub/models/#train-model) insi
 
     You can choose to set the general access to "Private", in which case, only you will have access to it. Alternatively, you can set the general access to "Unlisted" which grants viewing access to anyone who has the direct link to the project, regardless of whether they have an Ultralytics HUB account or not.
 
-Navigate to the Project page of the project you want to share, open the project actions dropdown and click on the **Share** option. This action will trigger the **Share Project** dialog.
+Navigate to the Project page of the project you want to share, open the project actions dropdown and click on the *
+*Share** option. This action will trigger the **Share Project** dialog.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Share option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_share_project_1.jpg)
 
@@ -82,7 +93,8 @@ Now, anyone who has the direct link to your project can view it.
 
 ## Edit Project
 
-Navigate to the Project page of the project you want to edit, open the project actions dropdown and click on the **Edit** option. This action will trigger the **Update Project** dialog.
+Navigate to the Project page of the project you want to edit, open the project actions dropdown and click on the **Edit
+** option. This action will trigger the **Update Project** dialog.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Edit option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_edit_project_1.jpg)
 
@@ -98,7 +110,8 @@ Apply the desired modifications to your project and then confirm the changes by 
 
 ## Delete Project
 
-Navigate to the Project page of the project you want to delete, open the project actions dropdown and click on the **Delete** option. This action will delete the project.
+Navigate to the Project page of the project you want to delete, open the project actions dropdown and click on the *
+*Delete** option. This action will delete the project.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Delete option](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_delete_project_1.jpg)
 
@@ -120,11 +133,14 @@ Navigate to the Project page of the project you want to delete, open the project
 
 ## Compare Models
 
-Navigate to the Project page of the project where the models you want to compare are located. To use the model comparison feature, click on the **Charts** tab.
+Navigate to the Project page of the project where the models you want to compare are located. To use the model
+comparison feature, click on the **Charts** tab.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Charts tab](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_compare_models_1.jpg)
 
-This will display all the relevant charts. Each chart corresponds to a different metric and contains the performance of each model for that metric. The models are represented by different colors and you can hover over each data point to get more information.
+This will display all the relevant charts. Each chart corresponds to a different metric and contains the performance of
+each model for that metric. The models are represented by different colors and you can hover over each data point to get
+more information.
 
 ![Ultralytics HUB screenshot of the Charts tab inside the Project page](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_compare_models_2.jpg)
 
@@ -148,13 +164,15 @@ This will display all the relevant charts. Each chart corresponds to a different
 
     Ultralytics HUB's reordering functionality works only inside projects you own.
 
-Navigate to the Project page of the project where the models you want to reorder are located. Click on the designated reorder icon of the model you want to move and drag it to the desired location.
+Navigate to the Project page of the project where the models you want to reorder are located. Click on the designated
+reorder icon of the model you want to move and drag it to the desired location.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the reorder icon](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_reorder_models_1.jpg)
 
 ## Transfer Models
 
-Navigate to the Project page of the project where the model you want to mode is located, open the project actions dropdown and click on the **Transfer** option. This action will trigger the **Transfer Model** dialog.
+Navigate to the Project page of the project where the model you want to mode is located, open the project actions
+dropdown and click on the **Transfer** option. This action will trigger the **Transfer Model** dialog.
 
 ![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Transfer option of one of the models](https://raw.githubusercontent.com/ultralytics/assets/main/docs/hub/projects/hub_transfer_models_1.jpg)
 

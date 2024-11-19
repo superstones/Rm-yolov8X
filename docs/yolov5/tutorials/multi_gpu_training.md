@@ -1,14 +1,20 @@
 ---
 comments: true
-description: Learn how to train datasets on single or multiple GPUs using YOLOv5. Includes setup, training modes and result profiling for efficient leveraging of multiple GPUs.
+description: Learn how to train datasets on single or multiple GPUs using YOLOv5. Includes setup, training modes and
+result profiling for efficient leveraging of multiple GPUs.
 keywords: YOLOv5, multi-GPU Training, YOLOv5 training, deep learning, machine learning, object detection, Ultralytics
 ---
 
-📚 This guide explains how to properly use **multiple** GPUs to train a dataset with YOLOv5 🚀 on single or multiple machine(s). UPDATED 25 December 2022.
+📚 This guide explains how to properly use **multiple** GPUs to train a dataset with YOLOv5 🚀 on single or multiple
+machine(s). UPDATED 25 December 2022.
 
 ## Before You Start
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [**Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models) and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
+Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a [*
+*Python>=3.8.0**](https://www.python.org/) environment, including [**PyTorch>=1.8
+**](https://pytorch.org/get-started/locally/). [Models](https://github.com/ultralytics/yolov5/tree/master/models)
+and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest
+YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
 
 ```bash
 git clone https://github.com/ultralytics/yolov5  # clone
@@ -16,13 +22,19 @@ cd yolov5
 pip install -r requirements.txt  # install
 ```
 
-💡 ProTip! **Docker Image** is recommended for all Multi-GPU trainings. See [Docker Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/docker_image_quickstart_tutorial/) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+💡 ProTip! **Docker Image** is recommended for all Multi-GPU trainings.
+See [Docker Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/docker_image_quickstart_tutorial/) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
-💡 ProTip! `torch.distributed.run` replaces `torch.distributed.launch` in **PyTorch>=1.9**. See [docs](https://pytorch.org/docs/stable/distributed.html) for details.
+💡 ProTip! `torch.distributed.run` replaces `torch.distributed.launch` in **PyTorch>=1.9**.
+See [docs](https://pytorch.org/docs/stable/distributed.html) for details.
 
 ## Training
 
-Select a pretrained model to start training from. Here we select [YOLOv5s](https://github.com/ultralytics/yolov5/blob/master/models/yolov5s.yaml), the smallest and fastest model available. See our README [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints) for a full comparison of all models. We will train this model with Multi-GPU on the [COCO](https://github.com/ultralytics/yolov5/blob/master/data/scripts/get_coco.sh) dataset.
+Select a pretrained model to start training from. Here we
+select [YOLOv5s](https://github.com/ultralytics/yolov5/blob/master/models/yolov5s.yaml), the smallest and fastest model
+available. See our README [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints) for a full comparison of
+all models. We will train this model with Multi-GPU on
+the [COCO](https://github.com/ultralytics/yolov5/blob/master/data/scripts/get_coco.sh) dataset.
 
 <p align="center"><img width="700" alt="YOLOv5 Models" src="https://github.com/ultralytics/yolov5/releases/download/v1.0/model_comparison.png"></p>
 
@@ -58,7 +70,8 @@ The code above will use GPUs `0... (N-1)`.
 <details markdown>
   <summary>Use specific GPUs (click to expand)</summary>
 
-You can do so by simply passing `--device` followed by your specific GPUs. For example, in the code below, we will use GPUs `2,3`.
+You can do so by simply passing `--device` followed by your specific GPUs. For example, in the code below, we will use
+GPUs `2,3`.
 
 ```bash
 python -m torch.distributed.run --nproc_per_node 2 train.py --batch 64 --data coco.yaml --cfg yolov5s.yaml --weights '' --device 2,3
@@ -69,7 +82,9 @@ python -m torch.distributed.run --nproc_per_node 2 train.py --batch 64 --data co
 <details markdown>
   <summary>Use SyncBatchNorm (click to expand)</summary>
 
-[SyncBatchNorm](https://pytorch.org/docs/master/generated/torch.nn.SyncBatchNorm.html) could increase accuracy for multiple gpu training, however, it will slow down training by a significant factor. It is **only** available for Multiple GPU DistributedDataParallel training.
+[SyncBatchNorm](https://pytorch.org/docs/master/generated/torch.nn.SyncBatchNorm.html) could increase accuracy for
+multiple gpu training, however, it will slow down training by a significant factor. It is **only** available for
+Multiple GPU DistributedDataParallel training.
 
 It is best used when the batch-size on **each** GPU is small (<= 8).
 
@@ -86,9 +101,11 @@ python -m torch.distributed.run --nproc_per_node 2 train.py --batch 64 --data co
 
 This is **only** available for Multiple GPU DistributedDataParallel training.
 
-Before we continue, make sure the files on all machines are the same, dataset, codebase, etc. Afterwards, make sure the machines can communicate to each other.
+Before we continue, make sure the files on all machines are the same, dataset, codebase, etc. Afterwards, make sure the
+machines can communicate to each other.
 
-You will have to choose a master machine(the machine that the others will talk to). Note down its address(`master_addr`) and choose a port(`master_port`). I will use `master_addr = 192.168.1.1` and `master_port = 1234` for the example below.
+You will have to choose a master machine(the machine that the others will talk to). Note down its address(`master_addr`)
+and choose a port(`master_port`). I will use `master_addr = 192.168.1.1` and `master_port = 1234` for the example below.
 
 To use it, you can do as the following,
 
@@ -102,7 +119,8 @@ python -m torch.distributed.run --nproc_per_node G --nnodes N --node_rank 0 --ma
 python -m torch.distributed.run --nproc_per_node G --nnodes N --node_rank R --master_addr "192.168.1.1" --master_port 1234 train.py --batch 64 --data coco.yaml --cfg yolov5s.yaml --weights ''
 ```
 
-where `G` is number of GPU per machine, `N` is the number of machines, and `R` is the machine number from `0...(N-1)`. Let's say I have two machines with two GPUs each, it would be `G = 2` , `N = 2`, and `R = 1` for the above.
+where `G` is number of GPU per machine, `N` is the number of machines, and `R` is the machine number from `0...(N-1)`.
+Let's say I have two machines with two GPUs each, it would be `G = 2` , `N = 2`, and `R = 1` for the above.
 
 Training will not start until <b>all </b> `N` machines are connected. Output will only be shown on master machine!
 
@@ -113,7 +131,8 @@ Training will not start until <b>all </b> `N` machines are connected. Output wil
 - Windows support is untested, Linux is recommended.
 - `--batch ` must be a multiple of the number of GPUs.
 - GPU 0 will take slightly more memory than the other GPUs as it maintains EMA and is responsible for checkpointing etc.
-- If you get `RuntimeError: Address already in use`, it could be because you are running multiple trainings at a time. To fix this, simply use a different port number by adding `--master_port` like below,
+- If you get `RuntimeError: Address already in use`, it could be because you are running multiple trainings at a time.
+  To fix this, simply use a different port number by adding `--master_port` like below,
 
 ```bash
 python -m torch.distributed.run --master_port 1234 --nproc_per_node 2 ...
@@ -121,7 +140,9 @@ python -m torch.distributed.run --master_port 1234 --nproc_per_node 2 ...
 
 ## Results
 
-DDP profiling results on an [AWS EC2 P4d instance](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/) with 8x A100 SXM4-40GB for YOLOv5l for 1 COCO epoch.
+DDP profiling results on
+an [AWS EC2 P4d instance](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/) with 8x A100
+SXM4-40GB for YOLOv5l for 1 COCO epoch.
 
 <details markdown>
   <summary>Profiling code</summary>
@@ -165,24 +186,35 @@ If an error occurs, please read the checklist below first! (It could save your t
     <li>Have you tried with another dataset like coco128 or coco2017? It will make it easier to find the root cause. </li>
 </ul>
 
-If you went through all the above, feel free to raise an Issue by giving as much detail as possible following the template.
+If you went through all the above, feel free to raise an Issue by giving as much detail as possible following the
+template.
 
 </details>
 
 ## Environments
 
-YOLOv5 is designed to be run in the following up-to-date verified environments (with all dependencies including [CUDA](https://developer.nvidia.com/cuda)/[CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/) and [PyTorch](https://pytorch.org/) preinstalled):
+YOLOv5 is designed to be run in the following up-to-date verified environments (with all dependencies
+including [CUDA](https://developer.nvidia.com/cuda)/[CUDNN](https://developer.nvidia.com/cudnn), [Python](https://www.python.org/)
+and [PyTorch](https://pytorch.org/) preinstalled):
 
-- **Notebooks** with free GPU: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
-- **Google Cloud** Deep Learning VM. See [GCP Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/google_cloud_quickstart_tutorial/)
-- **Amazon** Deep Learning AMI. See [AWS Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/)
-- **Docker Image**. See [Docker Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/docker_image_quickstart_tutorial/) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
+- **Notebooks** with free
+  GPU: <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a> <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="https://www.kaggle.com/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
+- **Google Cloud** Deep Learning VM.
+  See [GCP Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/google_cloud_quickstart_tutorial/)
+- **Amazon** Deep Learning AMI.
+  See [AWS Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/)
+- **Docker Image**.
+  See [Docker Quickstart Guide](https://docs.ultralytics.com/yolov5/environments/docker_image_quickstart_tutorial/) <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
 
 ## Status
 
 <a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
 
-If this badge is green, all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous Integration (CI) tests are currently passing. CI tests verify correct operation of YOLOv5 [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py) and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py) on macOS, Windows, and Ubuntu every 24 hours and on every commit.
+If this badge is green, all [YOLOv5 GitHub Actions](https://github.com/ultralytics/yolov5/actions) Continuous
+Integration (CI) tests are currently passing. CI tests verify correct operation of
+YOLOv5 [training](https://github.com/ultralytics/yolov5/blob/master/train.py), [validation](https://github.com/ultralytics/yolov5/blob/master/val.py), [inference](https://github.com/ultralytics/yolov5/blob/master/detect.py), [export](https://github.com/ultralytics/yolov5/blob/master/export.py)
+and [benchmarks](https://github.com/ultralytics/yolov5/blob/master/benchmarks.py) on macOS, Windows, and Ubuntu every 24
+hours and on every commit.
 
 ## Credits
 

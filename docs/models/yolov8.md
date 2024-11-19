@@ -1,23 +1,32 @@
 ---
 comments: true
-description: Explore the thrilling features of YOLOv8, the latest version of our real-time object detector! Learn how advanced architectures, pre-trained models and optimal balance between accuracy & speed make YOLOv8 the perfect choice for your object detection tasks.
-keywords: YOLOv8, Ultralytics, real-time object detector, pre-trained models, documentation, object detection, YOLO series, advanced architectures, accuracy, speed
+description: Explore the thrilling features of YOLOv8, the latest version of our real-time object detector! Learn how
+advanced architectures, pre-trained models and optimal balance between accuracy & speed make YOLOv8 the perfect choice
+for your object detection tasks.
+keywords: YOLOv8, Ultralytics, real-time object detector, pre-trained models, documentation, object detection, YOLO
+series, advanced architectures, accuracy, speed
 ---
 
 # YOLOv8
 
 ## Overview
 
-YOLOv8 is the latest iteration in the YOLO series of real-time object detectors, offering cutting-edge performance in terms of accuracy and speed. Building upon the advancements of previous YOLO versions, YOLOv8 introduces new features and optimizations that make it an ideal choice for various object detection tasks in a wide range of applications.
+YOLOv8 is the latest iteration in the YOLO series of real-time object detectors, offering cutting-edge performance in
+terms of accuracy and speed. Building upon the advancements of previous YOLO versions, YOLOv8 introduces new features
+and optimizations that make it an ideal choice for various object detection tasks in a wide range of applications.
 
 ![Ultralytics YOLOv8](https://raw.githubusercontent.com/ultralytics/assets/main/yolov8/yolo-comparison-plots.png)
 
 ## Key Features
 
-- **Advanced Backbone and Neck Architectures:** YOLOv8 employs state-of-the-art backbone and neck architectures, resulting in improved feature extraction and object detection performance.
-- **Anchor-free Split Ultralytics Head:** YOLOv8 adopts an anchor-free split Ultralytics head, which contributes to better accuracy and a more efficient detection process compared to anchor-based approaches.
-- **Optimized Accuracy-Speed Tradeoff:** With a focus on maintaining an optimal balance between accuracy and speed, YOLOv8 is suitable for real-time object detection tasks in diverse application areas.
-- **Variety of Pre-trained Models:** YOLOv8 offers a range of pre-trained models to cater to various tasks and performance requirements, making it easier to find the right model for your specific use case.
+- **Advanced Backbone and Neck Architectures:** YOLOv8 employs state-of-the-art backbone and neck architectures,
+  resulting in improved feature extraction and object detection performance.
+- **Anchor-free Split Ultralytics Head:** YOLOv8 adopts an anchor-free split Ultralytics head, which contributes to
+  better accuracy and a more efficient detection process compared to anchor-based approaches.
+- **Optimized Accuracy-Speed Tradeoff:** With a focus on maintaining an optimal balance between accuracy and speed,
+  YOLOv8 is suitable for real-time object detection tasks in diverse application areas.
+- **Variety of Pre-trained Models:** YOLOv8 offers a range of pre-trained models to cater to various tasks and
+  performance requirements, making it easier to find the right model for your specific use case.
 
 ## Supported Tasks
 
@@ -93,7 +102,8 @@ YOLOv8 is the latest iteration in the YOLO series of real-time object detectors,
 
 ## Usage
 
-You can use YOLOv8 for object detection tasks using the Ultralytics pip package. The following is a sample code snippet showing how to use YOLOv8 models for inference:
+You can use YOLOv8 for object detection tasks using the Ultralytics pip package. The following is a sample code snippet
+showing how to use YOLOv8 models for inference:
 
 !!! example ""
 
@@ -133,7 +143,8 @@ You can use YOLOv8 for object detection tasks using the Ultralytics pip package.
 
 ## Citations and Acknowledgements
 
-If you use the YOLOv8 model or any other software from this repository in your work, please cite it using the following format:
+If you use the YOLOv8 model or any other software from this repository in your work, please cite it using the following
+format:
 
 !!! note ""
 
@@ -151,4 +162,5 @@ If you use the YOLOv8 model or any other software from this repository in your w
         }
         ```
 
-Please note that the DOI is pending and will be added to the citation once it is available. The usage of the software is in accordance with the AGPL-3.0 license.
+Please note that the DOI is pending and will be added to the citation once it is available. The usage of the software is
+in accordance with the AGPL-3.0 license.

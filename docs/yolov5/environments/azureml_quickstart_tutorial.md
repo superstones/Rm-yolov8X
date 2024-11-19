@@ -8,7 +8,8 @@ keywords: Ultralytics, YOLO, Deep Learning, Object detection, quickstart, Azure,
 
 This guide provides a quickstart to use YOLOv5 from an AzureML compute instance.
 
-Note that this guide is a quickstart for quick trials. If you want to unlock the full power AzureML, you can find the documentation to:
+Note that this guide is a quickstart for quick trials. If you want to unlock the full power AzureML, you can find the
+documentation to:
 
 - [Create a data asset](https://learn.microsoft.com/azure/machine-learning/how-to-create-data-assets)
 - [Create an AzureML job](https://learn.microsoft.com/azure/machine-learning/how-to-train-model)
@@ -16,7 +17,8 @@ Note that this guide is a quickstart for quick trials. If you want to unlock the
 
 ## Prerequisites
 
-You need an [AzureML workspace](https://learn.microsoft.com/azure/machine-learning/concept-workspace?view=azureml-api-2).
+You need
+an [AzureML workspace](https://learn.microsoft.com/azure/machine-learning/concept-workspace?view=azureml-api-2).
 
 ## Create a compute instance
 
@@ -81,10 +83,12 @@ python detect.py --weights yolov5s.pt --source path/to/images
 
 ## Notes on using a notebook
 
-Note that if you want to run these commands from a Notebook, you need to [create a new Kernel](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-access-terminal?view=azureml-api-2#add-new-kernels)
+Note that if you want to run these commands from a Notebook, you need
+to [create a new Kernel](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-access-terminal?view=azureml-api-2#add-new-kernels)
 and select your new Kernel on the top of your Notebook.
 
-If you create Python cells it will automatically use your custom environment, but if you add bash cells, you will need to run `source activate <your-env>` on each of these cells to make sure it uses your custom environment.
+If you create Python cells it will automatically use your custom environment, but if you add bash cells, you will need
+to run `source activate <your-env>` on each of these cells to make sure it uses your custom environment.
 
 For example:
 

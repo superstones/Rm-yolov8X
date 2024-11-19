@@ -1,10 +1,14 @@
 ---
 comments: true
-description: Master YOLOv8 settings and hyperparameters for improved model performance. Learn to use YOLO CLI commands, adjust training settings, and optimize YOLO tasks & modes.
-keywords: YOLOv8, settings, hyperparameters, YOLO CLI commands, YOLO tasks, YOLO modes, Ultralytics documentation, model optimization, YOLOv8 training
+description: Master YOLOv8 settings and hyperparameters for improved model performance. Learn to use YOLO CLI commands,
+adjust training settings, and optimize YOLO tasks & modes.
+keywords: YOLOv8, settings, hyperparameters, YOLO CLI commands, YOLO tasks, YOLO modes, Ultralytics documentation, model
+optimization, YOLOv8 training
 ---
 
-YOLO settings and hyperparameters play a critical role in the model's performance, speed, and accuracy. These settings and hyperparameters can affect the model's behavior at various stages of the model development process, including training, validation, and prediction.
+YOLO settings and hyperparameters play a critical role in the model's performance, speed, and accuracy. These settings
+and hyperparameters can affect the model's behavior at various stages of the model development process, including
+training, validation, and prediction.
 
 YOLOv8 `yolo` CLI commands use the following syntax:
 
@@ -30,15 +34,18 @@ YOLOv8 `yolo` CLI commands use the following syntax:
 
 Where:
 
-- `TASK` (optional) is one of `[detect, segment, classify, pose]`. If it is not passed explicitly YOLOv8 will try to guess the `TASK` from the model type.
+- `TASK` (optional) is one of `[detect, segment, classify, pose]`. If it is not passed explicitly YOLOv8 will try to
+  guess the `TASK` from the model type.
 - `MODE` (required) is one of `[train, val, predict, export, track, benchmark]`
 - `ARGS` (optional) are any number of custom `arg=value` pairs like `imgsz=320` that override defaults.
 
-For a full list of available `ARGS` see the [Configuration](cfg.md) page and `defaults.yaml` GitHub [source](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml).
+For a full list of available `ARGS` see the [Configuration](cfg.md) page and `defaults.yaml`
+GitHub [source](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml).
 
 #### Tasks
 
-YOLO models can be used for a variety of tasks, including detection, segmentation, classification and pose. These tasks differ in the type of output they produce and the specific problem they are designed to solve.
+YOLO models can be used for a variety of tasks, including detection, segmentation, classification and pose. These tasks
+differ in the type of output they produce and the specific problem they are designed to solve.
 
 **Detect**: For identifying and localizing objects or regions of interest in an image or video.
 **Segment**: For dividing an image or video into regions or pixels that correspond to different objects or classes.
@@ -53,7 +60,8 @@ YOLO models can be used for a variety of tasks, including detection, segmentatio
 
 #### Modes
 
-YOLO models can be used in different modes depending on the specific problem you are trying to solve. These modes include:
+YOLO models can be used in different modes depending on the specific problem you are trying to solve. These modes
+include:
 
 **Train**: For training a YOLOv8 model on a custom dataset.
 **Val**: For validating a YOLOv8 model after it has been trained.
@@ -70,7 +78,11 @@ YOLO models can be used in different modes depending on the specific problem you
 
 ## Train
 
-The training settings for YOLO models encompass various hyperparameters and configurations used during the training process. These settings influence the model's performance, speed, and accuracy. Key training settings include batch size, learning rate, momentum, and weight decay. Additionally, the choice of optimizer, loss function, and training dataset composition can impact the training process. Careful tuning and experimentation with these settings are crucial for optimizing performance.
+The training settings for YOLO models encompass various hyperparameters and configurations used during the training
+process. These settings influence the model's performance, speed, and accuracy. Key training settings include batch
+size, learning rate, momentum, and weight decay. Additionally, the choice of optimizer, loss function, and training
+dataset composition can impact the training process. Careful tuning and experimentation with these settings are crucial
+for optimizing performance.
 
 | Key               | Value    | Description                                                                                    |
 |-------------------|----------|------------------------------------------------------------------------------------------------|
@@ -125,7 +137,12 @@ The training settings for YOLO models encompass various hyperparameters and conf
 
 ## Predict
 
-The prediction settings for YOLO models encompass a range of hyperparameters and configurations that influence the model's performance, speed, and accuracy during inference on new data. Careful tuning and experimentation with these settings are essential to achieve optimal performance for a specific task. Key settings include the confidence threshold, Non-Maximum Suppression (NMS) threshold, and the number of classes considered. Additional factors affecting the prediction process are input data size and format, the presence of supplementary features such as masks or multiple labels per box, and the particular task the model is employed for.
+The prediction settings for YOLO models encompass a range of hyperparameters and configurations that influence the
+model's performance, speed, and accuracy during inference on new data. Careful tuning and experimentation with these
+settings are essential to achieve optimal performance for a specific task. Key settings include the confidence
+threshold, Non-Maximum Suppression (NMS) threshold, and the number of classes considered. Additional factors affecting
+the prediction process are input data size and format, the presence of supplementary features such as masks or multiple
+labels per box, and the particular task the model is employed for.
 
 | Key             | Value                  | Description                                                                    |
 |-----------------|------------------------|--------------------------------------------------------------------------------|
@@ -156,7 +173,12 @@ The prediction settings for YOLO models encompass a range of hyperparameters and
 
 ## Val
 
-The val (validation) settings for YOLO models involve various hyperparameters and configurations used to evaluate the model's performance on a validation dataset. These settings influence the model's performance, speed, and accuracy. Common YOLO validation settings include batch size, validation frequency during training, and performance evaluation metrics. Other factors affecting the validation process include the validation dataset's size and composition, as well as the specific task the model is employed for. Careful tuning and experimentation with these settings are crucial to ensure optimal performance on the validation dataset and detect and prevent overfitting.
+The val (validation) settings for YOLO models involve various hyperparameters and configurations used to evaluate the
+model's performance on a validation dataset. These settings influence the model's performance, speed, and accuracy.
+Common YOLO validation settings include batch size, validation frequency during training, and performance evaluation
+metrics. Other factors affecting the validation process include the validation dataset's size and composition, as well
+as the specific task the model is employed for. Careful tuning and experimentation with these settings are crucial to
+ensure optimal performance on the validation dataset and detect and prevent overfitting.
 
 | Key           | Value   | Description                                                        |
 |---------------|---------|--------------------------------------------------------------------|
@@ -176,7 +198,13 @@ The val (validation) settings for YOLO models involve various hyperparameters an
 
 ## Export
 
-Export settings for YOLO models encompass configurations and options related to saving or exporting the model for use in different environments or platforms. These settings can impact the model's performance, size, and compatibility with various systems. Key export settings include the exported model file format (e.g., ONNX, TensorFlow SavedModel), the target device (e.g., CPU, GPU), and additional features such as masks or multiple labels per box. The export process may also be affected by the model's specific task and the requirements or constraints of the destination environment or platform. It is crucial to thoughtfully configure these settings to ensure the exported model is optimized for the intended use case and functions effectively in the target environment.
+Export settings for YOLO models encompass configurations and options related to saving or exporting the model for use in
+different environments or platforms. These settings can impact the model's performance, size, and compatibility with
+various systems. Key export settings include the exported model file format (e.g., ONNX, TensorFlow SavedModel), the
+target device (e.g., CPU, GPU), and additional features such as masks or multiple labels per box. The export process may
+also be affected by the model's specific task and the requirements or constraints of the destination environment or
+platform. It is crucial to thoughtfully configure these settings to ensure the exported model is optimized for the
+intended use case and functions effectively in the target environment.
 
 | Key         | Value           | Description                                          |
 |-------------|-----------------|------------------------------------------------------|
@@ -196,7 +224,14 @@ Export settings for YOLO models encompass configurations and options related to 
 
 ## Augmentation
 
-Augmentation settings for YOLO models refer to the various transformations and modifications applied to the training data to increase the diversity and size of the dataset. These settings can affect the model's performance, speed, and accuracy. Some common YOLO augmentation settings include the type and intensity of the transformations applied (e.g. random flips, rotations, cropping, color changes), the probability with which each transformation is applied, and the presence of additional features such as masks or multiple labels per box. Other factors that may affect the augmentation process include the size and composition of the original dataset and the specific task the model is being used for. It is important to carefully tune and experiment with these settings to ensure that the augmented dataset is diverse and representative enough to train a high-performing model.
+Augmentation settings for YOLO models refer to the various transformations and modifications applied to the training
+data to increase the diversity and size of the dataset. These settings can affect the model's performance, speed, and
+accuracy. Some common YOLO augmentation settings include the type and intensity of the transformations applied (e.g.
+random flips, rotations, cropping, color changes), the probability with which each transformation is applied, and the
+presence of additional features such as masks or multiple labels per box. Other factors that may affect the augmentation
+process include the size and composition of the original dataset and the specific task the model is being used for. It
+is important to carefully tune and experiment with these settings to ensure that the augmented dataset is diverse and
+representative enough to train a high-performing model.
 
 | Key           | Value   | Description                                     |
 |---------------|---------|-------------------------------------------------|
@@ -218,12 +253,21 @@ Augmentation settings for YOLO models refer to the various transformations and m
 
 Logging, checkpoints, plotting, and file management are important considerations when training a YOLO model.
 
-- Logging: It is often helpful to log various metrics and statistics during training to track the model's progress and diagnose any issues that may arise. This can be done using a logging library such as TensorBoard or by writing log messages to a file.
-- Checkpoints: It is a good practice to save checkpoints of the model at regular intervals during training. This allows you to resume training from a previous point if the training process is interrupted or if you want to experiment with different training configurations.
-- Plotting: Visualizing the model's performance and training progress can be helpful for understanding how the model is behaving and identifying potential issues. This can be done using a plotting library such as matplotlib or by generating plots using a logging library such as TensorBoard.
-- File management: Managing the various files generated during the training process, such as model checkpoints, log files, and plots, can be challenging. It is important to have a clear and organized file structure to keep track of these files and make it easy to access and analyze them as needed.
+- Logging: It is often helpful to log various metrics and statistics during training to track the model's progress and
+  diagnose any issues that may arise. This can be done using a logging library such as TensorBoard or by writing log
+  messages to a file.
+- Checkpoints: It is a good practice to save checkpoints of the model at regular intervals during training. This allows
+  you to resume training from a previous point if the training process is interrupted or if you want to experiment with
+  different training configurations.
+- Plotting: Visualizing the model's performance and training progress can be helpful for understanding how the model is
+  behaving and identifying potential issues. This can be done using a plotting library such as matplotlib or by
+  generating plots using a logging library such as TensorBoard.
+- File management: Managing the various files generated during the training process, such as model checkpoints, log
+  files, and plots, can be challenging. It is important to have a clear and organized file structure to keep track of
+  these files and make it easy to access and analyze them as needed.
 
-Effective logging, checkpointing, plotting, and file management can help you keep track of the model's progress and make it easier to debug and optimize the training process.
+Effective logging, checkpointing, plotting, and file management can help you keep track of the model's progress and make
+it easier to debug and optimize the training process.
 
 | Key        | Value    | Description                                                                                    |
 |------------|----------|------------------------------------------------------------------------------------------------|

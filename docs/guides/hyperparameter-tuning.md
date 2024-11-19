@@ -1,6 +1,7 @@
 ---
 comments: true
-description: Dive into hyperparameter tuning in Ultralytics YOLO models. Learn how to optimize performance using the Tuner class and genetic evolution.
+description: Dive into hyperparameter tuning in Ultralytics YOLO models. Learn how to optimize performance using the
+Tuner class and genetic evolution.
 keywords: Ultralytics, YOLO, Hyperparameter Tuning, Tuner Class, Genetic Evolution, Optimization
 ---
 
@@ -8,13 +9,18 @@ keywords: Ultralytics, YOLO, Hyperparameter Tuning, Tuner Class, Genetic Evoluti
 
 ## Introduction
 
-Hyperparameter tuning is not just a one-time set-up but an iterative process aimed at optimizing the machine learning model's performance metrics, such as accuracy, precision, and recall. In the context of Ultralytics YOLO, these hyperparameters could range from learning rate to architectural details, such as the number of layers or types of activation functions used.
+Hyperparameter tuning is not just a one-time set-up but an iterative process aimed at optimizing the machine learning
+model's performance metrics, such as accuracy, precision, and recall. In the context of Ultralytics YOLO, these
+hyperparameters could range from learning rate to architectural details, such as the number of layers or types of
+activation functions used.
 
 ### What are Hyperparameters?
 
-Hyperparameters are high-level, structural settings for the algorithm. They are set prior to the training phase and remain constant during it. Here are some commonly tuned hyperparameters in Ultralytics YOLO:
+Hyperparameters are high-level, structural settings for the algorithm. They are set prior to the training phase and
+remain constant during it. Here are some commonly tuned hyperparameters in Ultralytics YOLO:
 
-- **Learning Rate** `lr0`: Determines the step size at each iteration while moving towards a minimum in the loss function.
+- **Learning Rate** `lr0`: Determines the step size at each iteration while moving towards a minimum in the loss
+  function.
 - **Batch Size** `batch`: Number of images processed simultaneously in a forward pass.
 - **Number of Epochs** `epochs`: An epoch is one complete forward and backward pass of all the training examples.
 - **Architecture Specifics**: Such as channel counts, number of layers, types of activation functions, etc.
@@ -23,27 +29,34 @@ Hyperparameters are high-level, structural settings for the algorithm. They are 
   <img width="640" src="https://user-images.githubusercontent.com/26833433/263858934-4f109a2f-82d9-4d08-8bd6-6fd1ff520bcd.png" alt="Hyperparameter Tuning Visual">
 </p>
 
-For a full list of augmentation hyperparameters used in YOLOv8 please refer to [https://docs.ultralytics.com/usage/cfg/#augmentation](https://docs.ultralytics.com/usage/cfg/#augmentation).
+For a full list of augmentation hyperparameters used in YOLOv8 please refer
+to [https://docs.ultralytics.com/usage/cfg/#augmentation](https://docs.ultralytics.com/usage/cfg/#augmentation).
 
 ### Genetic Evolution and Mutation
 
-Ultralytics YOLO uses genetic algorithms to optimize hyperparameters. Genetic algorithms are inspired by the mechanism of natural selection and genetics.
+Ultralytics YOLO uses genetic algorithms to optimize hyperparameters. Genetic algorithms are inspired by the mechanism
+of natural selection and genetics.
 
-- **Mutation**: In the context of Ultralytics YOLO, mutation helps in locally searching the hyperparameter space by applying small, random changes to existing hyperparameters, producing new candidates for evaluation.
-- **Crossover**: Although crossover is a popular genetic algorithm technique, it is not currently used in Ultralytics YOLO for hyperparameter tuning. The focus is mainly on mutation for generating new hyperparameter sets.
+- **Mutation**: In the context of Ultralytics YOLO, mutation helps in locally searching the hyperparameter space by
+  applying small, random changes to existing hyperparameters, producing new candidates for evaluation.
+- **Crossover**: Although crossover is a popular genetic algorithm technique, it is not currently used in Ultralytics
+  YOLO for hyperparameter tuning. The focus is mainly on mutation for generating new hyperparameter sets.
 
 ## Preparing for Hyperparameter Tuning
 
 Before you begin the tuning process, it's important to:
 
-1. **Identify the Metrics**: Determine the metrics you will use to evaluate the model's performance. This could be AP50, F1-score, or others.
-2. **Set the Tuning Budget**: Define how much computational resources you're willing to allocate. Hyperparameter tuning can be computationally intensive.
+1. **Identify the Metrics**: Determine the metrics you will use to evaluate the model's performance. This could be AP50,
+   F1-score, or others.
+2. **Set the Tuning Budget**: Define how much computational resources you're willing to allocate. Hyperparameter tuning
+   can be computationally intensive.
 
 ## Steps Involved
 
 ### Initialize Hyperparameters
 
-Start with a reasonable set of initial hyperparameters. This could either be the default hyperparameters set by Ultralytics YOLO or something based on your domain knowledge or previous experiments.
+Start with a reasonable set of initial hyperparameters. This could either be the default hyperparameters set by
+Ultralytics YOLO or something based on your domain knowledge or previous experiments.
 
 ### Mutate Hyperparameters
 
@@ -67,7 +80,9 @@ The process is repeated until either the set number of iterations is reached or 
 
 ## Usage Example
 
-Here's how to use the `model.tune()` method to utilize the `Tuner` class for hyperparameter tuning of YOLOv8n on COCO8 for 30 epochs with an AdamW optimizer and skipping plotting, checkpointing and validation other than on final epoch for faster Tuning.
+Here's how to use the `model.tune()` method to utilize the `Tuner` class for hyperparameter tuning of YOLOv8n on COCO8
+for 30 epochs with an AdamW optimizer and skipping plotting, checkpointing and validation other than on final epoch for
+faster Tuning.
 
 !!! example ""
 
@@ -85,11 +100,14 @@ Here's how to use the `model.tune()` method to utilize the `Tuner` class for hyp
 
 ## Results
 
-After you've successfully completed the hyperparameter tuning process, you will obtain several files and directories that encapsulate the results of the tuning. The following describes each:
+After you've successfully completed the hyperparameter tuning process, you will obtain several files and directories
+that encapsulate the results of the tuning. The following describes each:
 
 ### File Structure
 
-Here's what the directory structure of the results will look like. Training directories like `train1/` contain individual tuning iterations, i.e. one model trained with one set of hyperparameters. The `tune/` directory contains tuning results from all the individual model trainings:
+Here's what the directory structure of the results will look like. Training directories like `train1/` contain
+individual tuning iterations, i.e. one model trained with one set of hyperparameters. The `tune/` directory contains
+tuning results from all the individual model trainings:
 
 ```plaintext
 runs/
@@ -111,7 +129,8 @@ runs/
 
 #### best_hyperparameters.yaml
 
-This YAML file contains the best-performing hyperparameters found during the tuning process. You can use this file to initialize future trainings with these optimized settings.
+This YAML file contains the best-performing hyperparameters found during the tuning process. You can use this file to
+initialize future trainings with these optimized settings.
 
 - **Format**: YAML
 - **Usage**: Hyperparameter results
@@ -150,7 +169,8 @@ This YAML file contains the best-performing hyperparameters found during the tun
 
 #### best_fitness.png
 
-This is a plot displaying fitness (typically a performance metric like AP50) against the number of iterations. It helps you visualize how well the genetic algorithm performed over time.
+This is a plot displaying fitness (typically a performance metric like AP50) against the number of iterations. It helps
+you visualize how well the genetic algorithm performed over time.
 
 - **Format**: PNG
 - **Usage**: Performance visualization
@@ -161,7 +181,8 @@ This is a plot displaying fitness (typically a performance metric like AP50) aga
 
 #### tune_results.csv
 
-A CSV file containing detailed results of each iteration during the tuning. Each row in the file represents one iteration, and it includes metrics like fitness score, precision, recall, as well as the hyperparameters used.
+A CSV file containing detailed results of each iteration during the tuning. Each row in the file represents one
+iteration, and it includes metrics like fitness score, precision, recall, as well as the hyperparameters used.
 
 - **Format**: CSV
 - **Usage**: Per-iteration results tracking.
@@ -175,7 +196,9 @@ A CSV file containing detailed results of each iteration during the tuning. Each
 
 #### tune_scatter_plots.png
 
-This file contains scatter plots generated from `tune_results.csv`, helping you visualize relationships between different hyperparameters and performance metrics. Note that hyperparameters initialized to 0 will not be tuned, such as `degrees` and `shear` below.
+This file contains scatter plots generated from `tune_results.csv`, helping you visualize relationships between
+different hyperparameters and performance metrics. Note that hyperparameters initialized to 0 will not be tuned, such
+as `degrees` and `shear` below.
 
 - **Format**: PNG
 - **Usage**: Exploratory data analysis
@@ -186,16 +209,20 @@ This file contains scatter plots generated from `tune_results.csv`, helping you 
 
 #### weights/
 
-This directory contains the saved PyTorch models for the last and the best iterations during the hyperparameter tuning process.
+This directory contains the saved PyTorch models for the last and the best iterations during the hyperparameter tuning
+process.
 
 - **`last.pt`**: The last.pt weights for the iteration that achieved the best fitness score.
 - **`best.pt`**: The best.pt weights for the iteration that achieved the best fitness score.
 
-Using these results, you can make more informed decisions for your future model trainings and analyses. Feel free to consult these artifacts to understand how well your model performed and how you might improve it further.
+Using these results, you can make more informed decisions for your future model trainings and analyses. Feel free to
+consult these artifacts to understand how well your model performed and how you might improve it further.
 
 ## Conclusion
 
-The hyperparameter tuning process in Ultralytics YOLO is simplified yet powerful, thanks to its genetic algorithm-based approach focused on mutation. Following the steps outlined in this guide will assist you in systematically tuning your model to achieve better performance.
+The hyperparameter tuning process in Ultralytics YOLO is simplified yet powerful, thanks to its genetic algorithm-based
+approach focused on mutation. Following the steps outlined in this guide will assist you in systematically tuning your
+model to achieve better performance.
 
 ### Further Reading
 
@@ -203,4 +230,6 @@ The hyperparameter tuning process in Ultralytics YOLO is simplified yet powerful
 2. [YOLOv5 Hyperparameter Evolution Guide](https://docs.ultralytics.com/yolov5/tutorials/hyperparameter_evolution/)
 3. [Efficient Hyperparameter Tuning with Ray Tune and YOLOv8](https://docs.ultralytics.com/integrations/ray-tune/)
 
-For deeper insights, you can explore the `Tuner` class source code and accompanying documentation. Should you have any questions, feature requests, or need further assistance, feel free to reach out to us on [GitHub](https://github.com/ultralytics/ultralytics/issues/new/choose) or [Discord](https://ultralytics.com/discord).
+For deeper insights, you can explore the `Tuner` class source code and accompanying documentation. Should you have any
+questions, feature requests, or need further assistance, feel free to reach out to us
+on [GitHub](https://github.com/ultralytics/ultralytics/issues/new/choose) or [Discord](https://ultralytics.com/discord).

@@ -1,12 +1,16 @@
 ---
 comments: true
-description: Learn how to contribute to Ultralytics YOLO projects – guidelines for pull requests, reporting bugs, code conduct and CLA signing.
-keywords: Ultralytics, YOLO, open-source, contribute, pull request, bug report, coding guidelines, CLA, code of conduct, GitHub
+description: Learn how to contribute to Ultralytics YOLO projects – guidelines for pull requests, reporting bugs, code
+conduct and CLA signing.
+keywords: Ultralytics, YOLO, open-source, contribute, pull request, bug report, coding guidelines, CLA, code of conduct,
+GitHub
 ---
 
 # Contributing to Ultralytics Open-Source YOLO Repositories
 
-First of all, thank you for your interest in contributing to Ultralytics open-source YOLO repositories! Your contributions will help improve the project and benefit the community. This document provides guidelines and best practices to get you started.
+First of all, thank you for your interest in contributing to Ultralytics open-source YOLO repositories! Your
+contributions will help improve the project and benefit the community. This document provides guidelines and best
+practices to get you started.
 
 ## Table of Contents
 
@@ -21,33 +25,44 @@ First of all, thank you for your interest in contributing to Ultralytics open-so
 
 ## Code of Conduct
 
-All contributors are expected to adhere to the [Code of Conduct](code_of_conduct.md) to ensure a welcoming and inclusive environment for everyone.
+All contributors are expected to adhere to the [Code of Conduct](code_of_conduct.md) to ensure a welcoming and inclusive
+environment for everyone.
 
 ## Pull Requests
 
-We welcome contributions in the form of pull requests. To make the review process smoother, please follow these guidelines:
+We welcome contributions in the form of pull requests. To make the review process smoother, please follow these
+guidelines:
 
 1. **Fork the repository**: Fork the Ultralytics YOLO repository to your own GitHub account.
 
 2. **Create a branch**: Create a new branch in your forked repository with a descriptive name for your changes.
 
-3. **Make your changes**: Make the changes you want to contribute. Ensure that your changes follow the coding style of the project and do not introduce new errors or warnings.
+3. **Make your changes**: Make the changes you want to contribute. Ensure that your changes follow the coding style of
+   the project and do not introduce new errors or warnings.
 
-4. **Test your changes**: Test your changes locally to ensure that they work as expected and do not introduce new issues.
+4. **Test your changes**: Test your changes locally to ensure that they work as expected and do not introduce new
+   issues.
 
-5. **Commit your changes**: Commit your changes with a descriptive commit message. Make sure to include any relevant issue numbers in your commit message.
+5. **Commit your changes**: Commit your changes with a descriptive commit message. Make sure to include any relevant
+   issue numbers in your commit message.
 
-6. **Create a pull request**: Create a pull request from your forked repository to the main Ultralytics YOLO repository. In the pull request description, provide a clear explanation of your changes and how they improve the project.
+6. **Create a pull request**: Create a pull request from your forked repository to the main Ultralytics YOLO repository.
+   In the pull request description, provide a clear explanation of your changes and how they improve the project.
 
 ### CLA Signing
 
-Before we can accept your pull request, you need to sign a [Contributor License Agreement (CLA)](CLA.md). This is a legal document stating that you agree to the terms of contributing to the Ultralytics YOLO repositories. The CLA ensures that your contributions are properly licensed and that the project can continue to be distributed under the AGPL-3.0 license.
+Before we can accept your pull request, you need to sign a [Contributor License Agreement (CLA)](CLA.md). This is a
+legal document stating that you agree to the terms of contributing to the Ultralytics YOLO repositories. The CLA ensures
+that your contributions are properly licensed and that the project can continue to be distributed under the AGPL-3.0
+license.
 
 To sign the CLA, follow the instructions provided by the CLA bot after you submit your PR.
 
 ### Google-Style Docstrings
 
-When adding new functions or classes, please include a [Google-style docstring](https://google.github.io/styleguide/pyguide.html) to provide clear and concise documentation for other developers. This will help ensure that your contributions are easy to understand and maintain.
+When adding new functions or classes, please include
+a [Google-style docstring](https://google.github.io/styleguide/pyguide.html) to provide clear and concise documentation
+for other developers. This will help ensure that your contributions are easy to understand and maintain.
 
 Example Google-style docstring:
 
@@ -73,4 +88,6 @@ def example_function(arg1: int, arg2: int) -> bool:
 
 ### GitHub Actions CI Tests
 
-Before your pull request can be merged, all GitHub Actions Continuous Integration (CI) tests must pass. These tests include linting, unit tests, and other checks to ensure that your changes meet the quality standards of the project. Make sure to review the output of the GitHub Actions and fix any issues
+Before your pull request can be merged, all GitHub Actions Continuous Integration (CI) tests must pass. These tests
+include linting, unit tests, and other checks to ensure that your changes meet the quality standards of the project.
+Make sure to review the output of the GitHub Actions and fix any issues
